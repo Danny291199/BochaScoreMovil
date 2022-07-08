@@ -1,0 +1,140 @@
+﻿Build1=Default,b4a.example
+File1=index.html
+File2=Layout.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=core
+Library2=okhttputils2
+Library3=xui
+Library4=json
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Campeonato
+Module2=Campeonatos
+Module3=Starter
+NumberOfFiles=2
+NumberOfLibraries=4
+NumberOfModules=3
+Version=11.5
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A Example
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+	Private cam As Campeonatos
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private txtId As EditText
+	Private txtNombre As EditText
+	Private txtEstado As EditText
+	Private txtFecha_Inicio As EditText
+	Private txtImagen As EditText
+	Private txtDeleteStatus As EditText
+	Private lstCampeonatos As ListView
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	cam.Initialize
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+Private Sub cmdAdd_Click
+	Wait For (cam.Create(txtNombre.Text,txtEstado.Text,txtFecha_Inicio.Text,txtImagen.Text,txtDeleteStatus.Text)) Complete( resultado As Campeonato )
+	If resultado.Id = 0 Then
+		xui.MsgboxAsync("REGISTRO CREADO !!", "OK")
+		txtId.Text = resultado.Id
+	Else
+		xui.MsgboxAsync("REGISTRO NO SE PUDO CREAR!!", "ERROR")
+	End If
+End Sub
+
+'Private Sub cmdEdit_Click
+	'Wait For (dis.Update( txtCodigo.Text,txtNombre.Text,txtDescripcion.Text,txtPrecio.Text )) Complete( res As Int)
+	'If res = 0 Then
+	'	xui.MsgboxAsync("REGISTRO ACTUALIZADO !!", "OK")
+	'Else
+	'	xui.MsgboxAsync("REGISTRO NO SE PUDO ACTUALIZAR !!", "ERROR")
+'	End If
+'End Sub
+
+'Private Sub cmdDelete_Click
+'	Wait For (dis.Delete( txtCodigo.Text )) Complete ( respuesta As Int)
+'	If respuesta = 0 Then
+'		xui.MsgboxAsync("REGISTRO BORRADO !!", "OK")
+'		txtCodigo.Text = ""
+'		txtNombre.Text = ""
+'		txtDescripcion.Text = ""
+'		txtPrecio.Text = ""
+'	Else
+''		xui.MsgboxAsync("REGISTRO NO SE PUDO BORRAR !!", "ERROR")
+'	End If
+'End Sub
+
+'*Private Sub cmdReadOne_Click
+'	Wait For (dis.Read_One(txtCodigo.Text)) Complete ( respuesta As Dispositivo)
+'	If respuesta.Codigo <> 0 Then
+'		xui.MsgboxAsync("REGISTRO ENCONTRADO !!", "OK")
+'		txtCodigo.Text = respuesta.Codigo
+'		txtNombre.Text = respuesta.Nombre
+'		txtDescripcion.Text = respuesta.Descripcion
+'		txtPrecio.Text = respuesta.Precio
+'	Else
+'		xui.MsgboxAsync("REGISTRO NO ENCONTRADO !!", "ERROR")
+'		txtCodigo.Text = ""
+'		txtNombre.Text = ""
+'		txtDescripcion.Text = ""
+'		txtPrecio.Text = ""
+'	End If
+'End Sub
+
+Private Sub cmdReadAll_Click
+	lstCampeonatos.Clear
+	
+	Wait For (cam.Read_All) Complete( listaCamptos As List )
+	If listaCamptos.Size > 0 Then
+		xui.MsgboxAsync("REGISTROS ENCONTRADOS !!", "OK")
+		
+		For Each camp As Campeonato In listaCamptos
+			lstCampeonatos.AddTwoLines2( camp.Nombre, "Fecha Inicio = " & camp.Fecha_Inicio, camp)
+		Next
+	Else
+		xui.MsgboxAsync("REGISTROS NO ENCONTRADOS!!", "ERROR")
+	End If
+End Sub
+
+Private Sub lstDepartamentos_ItemClick (Position As Int, Value As Object)
+	Dim camp As Campeonato = Value
+	txtId.Text = camp.Id
+	txtNombre.Text = camp.Nombre
+	txtEstado.Text = camp.Estado
+	txtFecha_Inicio.Text = camp.Fecha_Inicio
+	txtImagen.Text = camp.Imagen
+	txtDeleteStatus.Text = camp.Delete_Status
+	
+End Sub
