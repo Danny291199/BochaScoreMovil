@@ -1,83 +1,63 @@
 b4a.example
 0
-3
+7
 campeonatos
 campeonato
+inicio
+inicios
+campequipos
+equipo
 httpjob
 1
 httpjob
-main,activity_create,1,0,34,37
-,lstcampeonatos,,txtdeletestatus,,txtestado,,txtfecha_inicio,,txtid,,txtimagen,,txtnombre,,cam
-,lstcampeonatos,,txtdeletestatus,,txtestado,,txtfecha_inicio,,txtid,,txtimagen,,txtnombre
-campeonatos,initialize,httpjob,initialize
-main,activity_pause,0,0,43,45
+main,activity_create,1,0,21,32
+,txtcontrasenia,,txtusuario,,ini
+,txtcontrasenia,,txtusuario
+inicios,initialize,httpjob,initialize
+main,activity_pause,0,0,38,40
 
 
 
-main,activity_resume,0,0,39,41
+main,activity_resume,0,0,34,36
 
 
 
-main,cmdadd_click,1,0,48,56
-,cam,,txtnombre,,txtestado,,txtfecha_inicio,,txtimagen,,txtdeletestatus,,xui,,txtid,httputils2service,tempfolder
+main,btnentrar_click,0,0,42,63
+,idcampeonato,,txtusuario
+,idcampeonato
 
-campeonatos,create,httpjob,poststring,httpjob,getrequest,httpjob,getstring,campeonatos,deserializaruno,campeonato,initialize,httpjob,postbytes,httpjob,addscheme,httpjob,getstring2,campeonatos,maptocampeonato
-main,cmdreadall_click,0,0,97,110
-,lstcampeonatos,,cam,,xui,httputils2service,tempfolder
-
-campeonatos,read_all,httpjob,download,campeonatos,deserializarlista,httpjob,getstring,httpjob,addscheme,campeonatos,maptocampeonato,campeonato,initialize,httpjob,getstring2
-main,globals,0,1,22,32
+main,globals,0,1,14,19
 
 
 
-main,lstdepartamentos_itemclick,1,0,112,121
-,txtid,,txtnombre,,txtestado,,txtfecha_inicio,,txtimagen,,txtdeletestatus
-
-
-main,process_globals,0,1,15,20
+main,process_globals,0,1,6,12
 
 
 
-campeonatos,initialize,0,0,7,9
+inicios,initialize,0,0,7,9
 
 
 httpjob,initialize
-campeonatos,create,0,0,13,43
+inicios,class_globals,0,0,1,4
+
+
+
+inicios,create,0,0,11,38
 httputils2service,tempfolder
 
-httpjob,poststring,httpjob,getrequest,httpjob,getstring,,deserializaruno,campeonato,initialize,httpjob,postbytes,httpjob,addscheme,httpjob,getstring2,,maptocampeonato
-campeonatos,read_all,0,0,46,62
+httpjob,poststring,httpjob,getrequest,httpjob,getstring,,deserializaruno,inicio,initialize,httpjob,postbytes,httpjob,addscheme,httpjob,getstring2,,maptoinicio
+inicios,deserializaruno,0,0,64,71
+
+
+,maptoinicio,inicio,initialize
+inicios,maptoinicio,0,0,56,62
+
+
+inicio,initialize
+inicios,read_one,0,0,40,54
 httputils2service,tempfolder
 
-httpjob,download,,deserializarlista,httpjob,getstring,httpjob,addscheme,,maptocampeonato,campeonato,initialize,httpjob,getstring2
-campeonatos,class_globals,0,0,1,4
-
-
-
-campeonatos,deserializaruno,0,0,138,145
-
-
-,maptocampeonato,campeonato,initialize
-campeonatos,delete,0,0,110,122
-
-
-httpjob,delete,httpjob,addscheme
-campeonatos,deserializarlista,0,0,148,161
-
-
-,maptocampeonato,campeonato,initialize
-campeonatos,maptocampeonato,0,1,124,136
-
-
-campeonato,initialize
-campeonatos,read_one,0,0,65,79
-httputils2service,tempfolder
-
-httpjob,download,,deserializaruno,httpjob,getstring,campeonato,initialize,httpjob,addscheme,,maptocampeonato,httpjob,getstring2
-campeonatos,update,0,0,82,107
-
-
-httpjob,putstring,httpjob,getrequest,httpjob,putbytes,httpjob,addscheme
+httpjob,download,httpjob,getrequest,,deserializaruno,httpjob,getstring,inicio,initialize,httpjob,addscheme,,maptoinicio,httpjob,getstring2
 starter,application_error,0,0,27,29
 
 
@@ -102,6 +82,46 @@ starter,service_taskremoved,0,0,22,24
 
 
 
+campeonatos,class_globals,0,0,1,4
+
+
+
+campeonatos,create,0,0,13,43
+httputils2service,tempfolder
+
+httpjob,poststring,httpjob,getrequest,httpjob,getstring,,deserializaruno,campeonato,initialize,httpjob,postbytes,httpjob,addscheme,httpjob,getstring2,,maptocampeonato
+campeonatos,deserializaruno,0,0,138,145
+
+
+,maptocampeonato,campeonato,initialize
+campeonatos,delete,0,0,110,122
+
+
+httpjob,delete,httpjob,addscheme
+campeonatos,deserializarlista,0,0,148,161
+
+
+,maptocampeonato,campeonato,initialize
+campeonatos,maptocampeonato,0,0,124,136
+
+
+campeonato,initialize
+campeonatos,initialize,0,0,7,9
+
+
+httpjob,initialize
+campeonatos,read_all,0,0,46,62
+httputils2service,tempfolder
+
+httpjob,download,,deserializarlista,httpjob,getstring,httpjob,addscheme,,maptocampeonato,campeonato,initialize,httpjob,getstring2
+campeonatos,read_one,0,0,65,79
+httputils2service,tempfolder
+
+httpjob,download,,deserializaruno,httpjob,getstring,campeonato,initialize,httpjob,addscheme,,maptocampeonato,httpjob,getstring2
+campeonatos,update,0,0,82,107
+
+
+httpjob,putstring,httpjob,getrequest,httpjob,putbytes,httpjob,addscheme
 httpjob,poststring,0,0,49,51
 
 
@@ -130,6 +150,10 @@ httpjob,putstring,0,0,66,68
 
 
 ,putbytes,,addscheme
+httpjob,getbitmap,0,0,321,325
+httputils2service,tempfolder
+
+
 httpjob,complete,0,0,306,309
 
 
@@ -154,10 +178,6 @@ httpjob,download2,0,0,226,235
 
 
 ,addscheme,,escapelink
-httpjob,getbitmap,0,0,321,325
-httputils2service,tempfolder
-
-
 httpjob,getbitmapresize,0,0,332,334
 httputils2service,tempfolder
 
@@ -215,6 +235,78 @@ campeonato,initialize,0,0,12,14
 
 
 campeonato,class_globals,0,0,1,9
+
+
+
+inicio,class_globals,0,0,1,4
+
+
+
+inicio,initialize,0,0,7,9
+
+
+
+campeonatosequipos,activity_create,1,0,24,51
+,btnagregar,,imgcamp,,lstequipos,,txtnomcamp,,camp_equi,main,idcampeonato,httputils2service,tempfolder
+,btnagregar,,imgcamp,,lstequipos,,txtnomcamp
+httpjob,initialize,campequipos,initialize,campequipos,read_one,httpjob,download,httpjob,getbitmap,campequipos,read_all_equipos_by_campeonato,httpjob,getrequest,campequipos,deserializaruno,httpjob,getstring,campeonato,initialize,httpjob,addscheme,campequipos,maptocampeonato,httpjob,getstring2,campequipos,deserializarlista,campequipos,maptoequipos,equipo,initialize
+campeonatosequipos,activity_pause,0,0,57,59
+
+
+
+campeonatosequipos,activity_resume,0,0,53,55
+
+
+
+campeonatosequipos,btnagregar_click,0,0,62,64
+
+
+
+campeonatosequipos,globals,0,1,13,22
+
+
+
+campeonatosequipos,process_globals,0,1,6,11
+
+
+
+campequipos,initialize,0,0,9,12
+
+
+httpjob,initialize
+campequipos,read_one,0,0,14,28
+httputils2service,tempfolder
+
+httpjob,download,httpjob,getrequest,,deserializaruno,httpjob,getstring,campeonato,initialize,httpjob,addscheme,,maptocampeonato,httpjob,getstring2
+campequipos,read_all_equipos_by_campeonato,0,0,30,46
+httputils2service,tempfolder
+
+httpjob,download,httpjob,getrequest,,deserializarlista,httpjob,getstring,httpjob,addscheme,,maptoequipos,equipo,initialize,httpjob,getstring2
+campequipos,class_globals,0,0,1,6
+
+
+
+campequipos,deserializarlista,0,0,77,91
+
+
+,maptoequipos,equipo,initialize
+campequipos,maptoequipos,0,0,58,66
+
+
+equipo,initialize
+campequipos,deserializaruno,0,0,68,75
+
+
+,maptocampeonato,campeonato,initialize
+campequipos,maptocampeonato,0,0,48,56
+
+
+campeonato,initialize
+equipo,initialize,0,0,10,12
+
+
+
+equipo,class_globals,0,0,1,7
 
 
 

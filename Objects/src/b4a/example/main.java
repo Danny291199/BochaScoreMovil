@@ -351,6 +351,7 @@ public static void initializeProcessGlobals() {
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
+vis = vis | (campeonatosequipos.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -375,34 +376,62 @@ public static void killProgram() {
 				__a.finish();}
 
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+ {
+            Activity __a = null;
+            if (campeonatosequipos.previousOne != null) {
+				__a = campeonatosequipos.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(campeonatosequipos.mostCurrent == null ? null : campeonatosequipos.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, httputils2service.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
-public static b4a.example.campeonatos _cam = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtid = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtnombre = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtestado = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtfecha_inicio = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtimagen = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtdeletestatus = null;
-public anywheresoftware.b4a.objects.ListViewWrapper _lstcampeonatos = null;
+public static b4a.example.inicios _ini = null;
+public static String _idcampeonato = "";
+public anywheresoftware.b4a.objects.EditTextWrapper _txtusuario = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txtcontrasenia = null;
 public b4a.example.starter _starter = null;
+public b4a.example.campeonatosequipos _campeonatosequipos = null;
 public b4a.example.httputils2service _httputils2service = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+anywheresoftware.b4a.objects.drawable.ColorDrawable _cd = null;
 RDebugUtils.currentLine=131072;
  //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"Layout\")";
-mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="cam.Initialize";
-_cam._initialize /*String*/ (null,processBA);
 RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131075;BA.debugLine="Activity.LoadLayout(\"1LoginBochaScore\")";
+mostCurrent._activity.LoadLayout("1LoginBochaScore",mostCurrent.activityBA);
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="ini.Initialize";
+_ini._initialize /*String*/ (null,processBA);
+RDebugUtils.currentLine=131077;
+ //BA.debugLineNum = 131077;BA.debugLine="txtUsuario.SingleLine=False";
+mostCurrent._txtusuario.setSingleLine(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="txtContrasenia.SingleLine=False";
+mostCurrent._txtcontrasenia.setSingleLine(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="Dim cd As ColorDrawable";
+_cd = new anywheresoftware.b4a.objects.drawable.ColorDrawable();
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="cd.Initialize2(Colors.Transparent, 10dip,1dip,";
+_cd.Initialize2(anywheresoftware.b4a.keywords.Common.Colors.Transparent,anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (1)),anywheresoftware.b4a.keywords.Common.Colors.White);
+RDebugUtils.currentLine=131081;
+ //BA.debugLineNum = 131081;BA.debugLine="txtUsuario.Background=cd";
+mostCurrent._txtusuario.setBackground((android.graphics.drawable.Drawable)(_cd.getObject()));
+RDebugUtils.currentLine=131082;
+ //BA.debugLineNum = 131082;BA.debugLine="txtContrasenia.Background=cd";
+mostCurrent._txtcontrasenia.setBackground((android.graphics.drawable.Drawable)(_cd.getObject()));
+RDebugUtils.currentLine=131083;
+ //BA.debugLineNum = 131083;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -423,240 +452,20 @@ RDebugUtils.currentLine=196610;
  //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
-public static void  _cmdadd_click() throws Exception{
+public static String  _btnentrar_click() throws Exception{
 RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdadd_click", false))
-	 {Debug.delegate(mostCurrent.activityBA, "cmdadd_click", null); return;}
-ResumableSub_cmdAdd_Click rsub = new ResumableSub_cmdAdd_Click(null);
-rsub.resume(processBA, null);
-}
-public static class ResumableSub_cmdAdd_Click extends BA.ResumableSub {
-public ResumableSub_cmdAdd_Click(b4a.example.main parent) {
-this.parent = parent;
-}
-b4a.example.main parent;
-b4a.example.campeonato _resultado = null;
-
-@Override
-public void resume(BA ba, Object[] result) throws Exception{
-RDebugUtils.currentModule="main";
-
-    while (true) {
-        switch (state) {
-            case -1:
-return;
-
-case 0:
-//C
-this.state = 1;
-RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="Wait For (cam.Create(txtNombre.Text,txtEstado.Tex";
-anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "main", "cmdadd_click"), parent._cam._create /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (null,parent.mostCurrent._txtnombre.getText(),(int)(Double.parseDouble(parent.mostCurrent._txtestado.getText())),parent.mostCurrent._txtfecha_inicio.getText(),parent.mostCurrent._txtimagen.getText(),(int)(Double.parseDouble(parent.mostCurrent._txtdeletestatus.getText()))));
-this.state = 7;
-return;
-case 7:
-//C
-this.state = 1;
-_resultado = (b4a.example.campeonato) result[0];
-;
-RDebugUtils.currentLine=327682;
- //BA.debugLineNum = 327682;BA.debugLine="If resultado.Id = 0 Then";
-if (true) break;
-
-case 1:
-//if
-this.state = 6;
-if (_resultado._id /*int*/ ==0) { 
-this.state = 3;
-}else {
-this.state = 5;
-}if (true) break;
-
-case 3:
-//C
-this.state = 6;
-RDebugUtils.currentLine=327683;
- //BA.debugLineNum = 327683;BA.debugLine="xui.MsgboxAsync(\"REGISTRO CREADO !!\", \"OK\")";
-parent._xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("REGISTRO CREADO !!"),BA.ObjectToCharSequence("OK"));
-RDebugUtils.currentLine=327684;
- //BA.debugLineNum = 327684;BA.debugLine="txtId.Text = resultado.Id";
-parent.mostCurrent._txtid.setText(BA.ObjectToCharSequence(_resultado._id /*int*/ ));
- if (true) break;
-
-case 5:
-//C
-this.state = 6;
-RDebugUtils.currentLine=327686;
- //BA.debugLineNum = 327686;BA.debugLine="xui.MsgboxAsync(\"REGISTRO NO SE PUDO CREAR!!\", \"";
-parent._xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("REGISTRO NO SE PUDO CREAR!!"),BA.ObjectToCharSequence("ERROR"));
- if (true) break;
-
-case 6:
-//C
-this.state = -1;
-;
-RDebugUtils.currentLine=327688;
- //BA.debugLineNum = 327688;BA.debugLine="End Sub";
-if (true) break;
-
-            }
-        }
-    }
-}
-public static void  _cmdreadall_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdreadall_click", false))
-	 {Debug.delegate(mostCurrent.activityBA, "cmdreadall_click", null); return;}
-ResumableSub_cmdReadAll_Click rsub = new ResumableSub_cmdReadAll_Click(null);
-rsub.resume(processBA, null);
-}
-public static class ResumableSub_cmdReadAll_Click extends BA.ResumableSub {
-public ResumableSub_cmdReadAll_Click(b4a.example.main parent) {
-this.parent = parent;
-}
-b4a.example.main parent;
-anywheresoftware.b4a.objects.collections.List _listacamptos = null;
-b4a.example.campeonato _camp = null;
-anywheresoftware.b4a.BA.IterableList group5;
-int index5;
-int groupLen5;
-
-@Override
-public void resume(BA ba, Object[] result) throws Exception{
-RDebugUtils.currentModule="main";
-
-    while (true) {
-        switch (state) {
-            case -1:
-return;
-
-case 0:
-//C
-this.state = 1;
-RDebugUtils.currentLine=589825;
- //BA.debugLineNum = 589825;BA.debugLine="lstCampeonatos.Clear";
-parent.mostCurrent._lstcampeonatos.Clear();
-RDebugUtils.currentLine=589827;
- //BA.debugLineNum = 589827;BA.debugLine="Wait For (cam.Read_All) Complete( listaCamptos As";
-anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "main", "cmdreadall_click"), parent._cam._read_all /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (null));
-this.state = 11;
-return;
-case 11:
-//C
-this.state = 1;
-_listacamptos = (anywheresoftware.b4a.objects.collections.List) result[0];
-;
-RDebugUtils.currentLine=589828;
- //BA.debugLineNum = 589828;BA.debugLine="If listaCamptos.Size > 0 Then";
-if (true) break;
-
-case 1:
-//if
-this.state = 10;
-if (_listacamptos.getSize()>0) { 
-this.state = 3;
-}else {
-this.state = 9;
-}if (true) break;
-
-case 3:
-//C
-this.state = 4;
-RDebugUtils.currentLine=589829;
- //BA.debugLineNum = 589829;BA.debugLine="xui.MsgboxAsync(\"REGISTROS ENCONTRADOS !!\", \"OK\"";
-parent._xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("REGISTROS ENCONTRADOS !!"),BA.ObjectToCharSequence("OK"));
-RDebugUtils.currentLine=589831;
- //BA.debugLineNum = 589831;BA.debugLine="For Each camp As Campeonato In listaCamptos";
-if (true) break;
-
-case 4:
-//for
-this.state = 7;
-group5 = _listacamptos;
-index5 = 0;
-groupLen5 = group5.getSize();
-this.state = 12;
-if (true) break;
-
-case 12:
-//C
-this.state = 7;
-if (index5 < groupLen5) {
-this.state = 6;
-_camp = (b4a.example.campeonato)(group5.Get(index5));}
-if (true) break;
-
-case 13:
-//C
-this.state = 12;
-index5++;
-if (true) break;
-
-case 6:
-//C
-this.state = 13;
-RDebugUtils.currentLine=589832;
- //BA.debugLineNum = 589832;BA.debugLine="lstCampeonatos.AddTwoLines2( camp.Nombre, \"Fech";
-parent.mostCurrent._lstcampeonatos.AddTwoLines2(BA.ObjectToCharSequence(_camp._nombre /*String*/ ),BA.ObjectToCharSequence("Fecha Inicio = "+_camp._fecha_inicio /*String*/ ),(Object)(_camp));
- if (true) break;
-if (true) break;
-
-case 7:
-//C
-this.state = 10;
-;
- if (true) break;
-
-case 9:
-//C
-this.state = 10;
-RDebugUtils.currentLine=589835;
- //BA.debugLineNum = 589835;BA.debugLine="xui.MsgboxAsync(\"REGISTROS NO ENCONTRADOS!!\", \"E";
-parent._xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("REGISTROS NO ENCONTRADOS!!"),BA.ObjectToCharSequence("ERROR"));
- if (true) break;
-
-case 10:
-//C
-this.state = -1;
-;
-RDebugUtils.currentLine=589837;
- //BA.debugLineNum = 589837;BA.debugLine="End Sub";
-if (true) break;
-
-            }
-        }
-    }
-}
-public static String  _lstdepartamentos_itemclick(int _position,Object _value) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lstdepartamentos_itemclick", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lstdepartamentos_itemclick", new Object[] {_position,_value}));}
-b4a.example.campeonato _camp = null;
-RDebugUtils.currentLine=655360;
- //BA.debugLineNum = 655360;BA.debugLine="Private Sub lstDepartamentos_ItemClick (Position A";
-RDebugUtils.currentLine=655361;
- //BA.debugLineNum = 655361;BA.debugLine="Dim camp As Campeonato = Value";
-_camp = (b4a.example.campeonato)(_value);
-RDebugUtils.currentLine=655362;
- //BA.debugLineNum = 655362;BA.debugLine="txtId.Text = camp.Id";
-mostCurrent._txtid.setText(BA.ObjectToCharSequence(_camp._id /*int*/ ));
-RDebugUtils.currentLine=655363;
- //BA.debugLineNum = 655363;BA.debugLine="txtNombre.Text = camp.Nombre";
-mostCurrent._txtnombre.setText(BA.ObjectToCharSequence(_camp._nombre /*String*/ ));
-RDebugUtils.currentLine=655364;
- //BA.debugLineNum = 655364;BA.debugLine="txtEstado.Text = camp.Estado";
-mostCurrent._txtestado.setText(BA.ObjectToCharSequence(_camp._estado /*int*/ ));
-RDebugUtils.currentLine=655365;
- //BA.debugLineNum = 655365;BA.debugLine="txtFecha_Inicio.Text = camp.Fecha_Inicio";
-mostCurrent._txtfecha_inicio.setText(BA.ObjectToCharSequence(_camp._fecha_inicio /*String*/ ));
-RDebugUtils.currentLine=655366;
- //BA.debugLineNum = 655366;BA.debugLine="txtImagen.Text = camp.Imagen";
-mostCurrent._txtimagen.setText(BA.ObjectToCharSequence(_camp._imagen /*String*/ ));
-RDebugUtils.currentLine=655367;
- //BA.debugLineNum = 655367;BA.debugLine="txtDeleteStatus.Text = camp.Delete_Status";
-mostCurrent._txtdeletestatus.setText(BA.ObjectToCharSequence(_camp._delete_status /*int*/ ));
-RDebugUtils.currentLine=655369;
- //BA.debugLineNum = 655369;BA.debugLine="End Sub";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btnentrar_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnentrar_click", null));}
+RDebugUtils.currentLine=8388608;
+ //BA.debugLineNum = 8388608;BA.debugLine="Sub btnEntrar_Click";
+RDebugUtils.currentLine=8388627;
+ //BA.debugLineNum = 8388627;BA.debugLine="idCampeonato = txtUsuario.Text";
+_idcampeonato = mostCurrent._txtusuario.getText();
+RDebugUtils.currentLine=8388628;
+ //BA.debugLineNum = 8388628;BA.debugLine="StartActivity(CampeonatosEquipos)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._campeonatosequipos.getObject()));
+RDebugUtils.currentLine=8388629;
+ //BA.debugLineNum = 8388629;BA.debugLine="End Sub";
 return "";
 }
 }

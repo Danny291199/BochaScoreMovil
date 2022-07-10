@@ -39,6 +39,7 @@ public String _imagen = "";
 public int _delete_status = 0;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
+public b4a.example.campeonatosequipos _campeonatosequipos = null;
 public b4a.example.httputils2service _httputils2service = null;
 public String  _initialize(b4a.example.campeonato __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
@@ -46,37 +47,37 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="campeonato";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=1835008;
- //BA.debugLineNum = 1835008;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=1835010;
- //BA.debugLineNum = 1835010;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2031616;
+ //BA.debugLineNum = 2031616;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=2031618;
+ //BA.debugLineNum = 2031618;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.example.campeonato __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="campeonato";
-RDebugUtils.currentLine=1769472;
- //BA.debugLineNum = 1769472;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=1769473;
- //BA.debugLineNum = 1769473;BA.debugLine="Public Id 		    As Int";
+RDebugUtils.currentLine=1966080;
+ //BA.debugLineNum = 1966080;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=1966081;
+ //BA.debugLineNum = 1966081;BA.debugLine="Public Id 		    As Int";
 _id = 0;
-RDebugUtils.currentLine=1769474;
- //BA.debugLineNum = 1769474;BA.debugLine="Public Nombre 		As String";
+RDebugUtils.currentLine=1966082;
+ //BA.debugLineNum = 1966082;BA.debugLine="Public Nombre 		As String";
 _nombre = "";
-RDebugUtils.currentLine=1769475;
- //BA.debugLineNum = 1769475;BA.debugLine="Public Estado	    As Int";
+RDebugUtils.currentLine=1966083;
+ //BA.debugLineNum = 1966083;BA.debugLine="Public Estado	    As Int";
 _estado = 0;
-RDebugUtils.currentLine=1769476;
- //BA.debugLineNum = 1769476;BA.debugLine="Public Fecha_Inicio As String";
+RDebugUtils.currentLine=1966084;
+ //BA.debugLineNum = 1966084;BA.debugLine="Public Fecha_Inicio As String";
 _fecha_inicio = "";
-RDebugUtils.currentLine=1769477;
- //BA.debugLineNum = 1769477;BA.debugLine="Public Imagen As String";
+RDebugUtils.currentLine=1966085;
+ //BA.debugLineNum = 1966085;BA.debugLine="Public Imagen As String";
 _imagen = "";
-RDebugUtils.currentLine=1769478;
- //BA.debugLineNum = 1769478;BA.debugLine="Public Delete_Status As Int";
+RDebugUtils.currentLine=1966086;
+ //BA.debugLineNum = 1966086;BA.debugLine="Public Delete_Status As Int";
 _delete_status = 0;
-RDebugUtils.currentLine=1769480;
- //BA.debugLineNum = 1769480;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1966088;
+ //BA.debugLineNum = 1966088;BA.debugLine="End Sub";
 return "";
 }
 }

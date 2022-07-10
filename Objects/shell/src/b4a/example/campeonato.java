@@ -19,6 +19,7 @@ public static RemoteObject _imagen = RemoteObject.createImmutable("");
 public static RemoteObject _delete_status = RemoteObject.createImmutable(0);
 public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
+public static b4a.example.campeonatosequipos _campeonatosequipos = null;
 public static b4a.example.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"Delete_Status",_ref.getField(false, "_delete_status"),"Estado",_ref.getField(false, "_estado"),"Fecha_Inicio",_ref.getField(false, "_fecha_inicio"),"Id",_ref.getField(false, "_id"),"Imagen",_ref.getField(false, "_imagen"),"Nombre",_ref.getField(false, "_nombre")};
