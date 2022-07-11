@@ -31,6 +31,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=Starter,Service_TaskRemoved,23,0,Equipo,Class_Globals,0,0,Main,Process_Globals,11,4,Login,Class_Globals,0,0,loginModel,Login_Post,33,6,Main,btnEntrar_Click,50,6,CampEquipos,DeserializarUno,71,0,CampeonatosEquipos,Activity_Create,34,5,CampEquipos,Read_One,13,6,CampEquipos,Read_All_Equipos_By_Campeonato,29,2
+NavigationStack=Starter,Service_TaskRemoved,23,0,Equipo,Class_Globals,0,0,Main,Process_Globals,11,4,Login,Class_Globals,0,0,loginModel,Login_Post,33,6,CampEquipos,DeserializarUno,71,0,CampeonatosEquipos,Activity_Create,34,5,CampEquipos,Read_One,13,6,CampEquipos,Read_All_Equipos_By_Campeonato,29,2,Main,btnEntrar_Click,50,6,Main,Activity_Create,23,0
 SelectedBuild=0
 VisibleModules=3,4,7
