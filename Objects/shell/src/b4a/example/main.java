@@ -56,14 +56,15 @@ public boolean isSingleton() {
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static RemoteObject _xui = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
-public static RemoteObject _ini = RemoteObject.declareNull("b4a.example.inicios");
+public static RemoteObject _logi = RemoteObject.declareNull("b4a.example.loginmodel");
 public static RemoteObject _idcampeonato = RemoteObject.createImmutable("");
+public static RemoteObject _token = RemoteObject.createImmutable("");
 public static RemoteObject _txtusuario = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _txtcontrasenia = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static b4a.example.starter _starter = null;
 public static b4a.example.campeonatosequipos _campeonatosequipos = null;
 public static b4a.example.httputils2service _httputils2service = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"CampeonatosEquipos",Debug.moduleToString(b4a.example.campeonatosequipos.class),"HttpUtils2Service",Debug.moduleToString(b4a.example.httputils2service.class),"idCampeonato",main._idcampeonato,"ini",main._ini,"Starter",Debug.moduleToString(b4a.example.starter.class),"txtContrasenia",main.mostCurrent._txtcontrasenia,"txtUsuario",main.mostCurrent._txtusuario,"xui",main._xui};
+		return new Object[] {"Activity",main.mostCurrent._activity,"CampeonatosEquipos",Debug.moduleToString(b4a.example.campeonatosequipos.class),"HttpUtils2Service",Debug.moduleToString(b4a.example.httputils2service.class),"idCampeonato",main._idcampeonato,"logi",main._logi,"Starter",Debug.moduleToString(b4a.example.starter.class),"token",main._token,"txtContrasenia",main.mostCurrent._txtcontrasenia,"txtUsuario",main.mostCurrent._txtusuario,"xui",main._xui};
 }
 }

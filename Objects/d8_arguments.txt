@@ -1,0 +1,68 @@
+--release
+--output
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects
+--lib
+C:\Android\platforms\android-30\android.jar
+C:\Android\tools\..\extras\b4a_local\unpacked-b4ashared-63783479750000\dex_v1\b4ashared.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-debug-63783479750000\dex_v1\debug.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-core-63783479750000\dex_v1\core.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-json-63783479750000\dex_v1\json.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-xui-63783479750000\dex_v1\xui.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-xcustomlistview-63783479750000\dex_v1\xcustomlistview.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-stringutils-63783479750000\dex_v1\stringutils.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-javaobject-63783479750000\dex_v1\javaobject.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-okhttp-63783479750000\dex_v1\okhttp.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63783479750000\dex_v1\okhttp-4.9.0.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63783479750000\dex_v1\okio-2.8.0.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-okhttp-urlconnection-4.9.3-63783479750000\dex_v1\okhttp-urlconnection-4.9.3.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-kotlin-stdlib-1.6.10-63783479750000\dex_v1\kotlin-stdlib-1.6.10.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-remotelogger-63783479750000\dex_v1\remotelogger.zip
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonato.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos$ResumableSub_Create.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos$ResumableSub_Delete.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos$ResumableSub_Read_All.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos$ResumableSub_Read_One.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos$ResumableSub_Update.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatos.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$1.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$B4AMenuItemsClickListener.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$HandleKeyDelayed.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$ResumableSub_Activity_Create.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$ResumeMessage.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos$WaitForLayout.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campeonatosequipos.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campequipos$ResumableSub_Read_All_Equipos_By_Campeonato.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campequipos$ResumableSub_Read_One.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\campequipos.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\equipo.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httpjob$_multipartfiledata.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httpjob.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httputils2service$1.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httputils2service$2.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httputils2service$httputils2service_BR.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\httputils2service.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\inicio.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\inicios$ResumableSub_Create.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\inicios$ResumableSub_Read_One.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\inicios.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\login.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\loginmodel$ResumableSub_Login_Post.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\loginmodel.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$1.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$B4AMenuItemsClickListener.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$HandleKeyDelayed.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$ResumableSub_btnEntrar_Click.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$ResumeMessage.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main$WaitForLayout.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\main.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\R$drawable.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\R$style.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\R.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\starter$1.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\starter$2.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\starter$starter_BR.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\starter.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\designerscripts\LS_1loginbochascore.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\designerscripts\LS_layout.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\designerscripts\LS_listaequiposbycampeonatos.dex
+F:\Universidad_Tecnica_del_Norte\7mo semestre\Proyecto integrador\ProyectoMovilBochaB4A\BochaScoreMovil\Objects\dexed\b4a\example\designerscripts\LS_pantallaregistro.dex

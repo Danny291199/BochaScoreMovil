@@ -40,16 +40,16 @@ public b4a.example.httputils2service _httputils2service = null;
 public String  _class_globals(b4a.example.campeonatos __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="campeonatos";
-RDebugUtils.currentLine=1310720;
- //BA.debugLineNum = 1310720;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=1310721;
- //BA.debugLineNum = 1310721;BA.debugLine="Private apiUrl 	As String = \"https://brochascore.";
+RDebugUtils.currentLine=786432;
+ //BA.debugLineNum = 786432;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=786433;
+ //BA.debugLineNum = 786433;BA.debugLine="Private apiUrl 	As String = \"https://brochascore.";
 _apiurl = "https://brochascore.herokuapp.com/campeonatos";
-RDebugUtils.currentLine=1310722;
- //BA.debugLineNum = 1310722;BA.debugLine="Private api		As HttpJob";
+RDebugUtils.currentLine=786434;
+ //BA.debugLineNum = 786434;BA.debugLine="Private api		As HttpJob";
 _api = new b4a.example.httpjob();
-RDebugUtils.currentLine=1310723;
- //BA.debugLineNum = 1310723;BA.debugLine="End Sub";
+RDebugUtils.currentLine=786435;
+ //BA.debugLineNum = 786435;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _create(b4a.example.campeonatos __ref,String _nombre,int _estado,String _fecha_inicio,String _imagen,int _delete_status) throws Exception{
@@ -95,26 +95,26 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=1441795;
- //BA.debugLineNum = 1441795;BA.debugLine="Dim jsonGen As JSONGenerator";
+RDebugUtils.currentLine=917507;
+ //BA.debugLineNum = 917507;BA.debugLine="Dim jsonGen As JSONGenerator";
 _jsongen = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
-RDebugUtils.currentLine=1441796;
- //BA.debugLineNum = 1441796;BA.debugLine="jsonGen.Initialize( CreateMap ( _ 		\"nombre\" : No";
+RDebugUtils.currentLine=917508;
+ //BA.debugLineNum = 917508;BA.debugLine="jsonGen.Initialize( CreateMap ( _ 		\"nombre\" : No";
 _jsongen.Initialize(parent.__c.createMap(new Object[] {(Object)("nombre"),(Object)(_nombre),(Object)("estado"),(Object)(_estado),(Object)("fecha_inicio"),(Object)(_fecha_inicio),(Object)("imagen"),(Object)(_imagen),(Object)("delete_status"),(Object)(_delete_status)}));
-RDebugUtils.currentLine=1441804;
- //BA.debugLineNum = 1441804;BA.debugLine="Dim jsonTxt As String = jsonGen.ToString";
+RDebugUtils.currentLine=917516;
+ //BA.debugLineNum = 917516;BA.debugLine="Dim jsonTxt As String = jsonGen.ToString";
 _jsontxt = _jsongen.ToString();
-RDebugUtils.currentLine=1441805;
- //BA.debugLineNum = 1441805;BA.debugLine="Log(jsonTxt)";
-parent.__c.LogImpl("41441805",_jsontxt,0);
-RDebugUtils.currentLine=1441807;
- //BA.debugLineNum = 1441807;BA.debugLine="api.PostString( apiUrl, jsonTxt)";
+RDebugUtils.currentLine=917517;
+ //BA.debugLineNum = 917517;BA.debugLine="Log(jsonTxt)";
+parent.__c.LogImpl("6917517",_jsontxt,0);
+RDebugUtils.currentLine=917519;
+ //BA.debugLineNum = 917519;BA.debugLine="api.PostString( apiUrl, jsonTxt)";
 __ref._api /*b4a.example.httpjob*/ ._poststring /*String*/ (null,__ref._apiurl /*String*/ ,_jsontxt);
-RDebugUtils.currentLine=1441808;
- //BA.debugLineNum = 1441808;BA.debugLine="api.GetRequest.SetContentType(\"application/json\")";
+RDebugUtils.currentLine=917520;
+ //BA.debugLineNum = 917520;BA.debugLine="api.GetRequest.SetContentType(\"application/json\")";
 __ref._api /*b4a.example.httpjob*/ ._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null).SetContentType("application/json");
-RDebugUtils.currentLine=1441811;
- //BA.debugLineNum = 1441811;BA.debugLine="Wait For (api) JobDone( response As HttpJob )";
+RDebugUtils.currentLine=917523;
+ //BA.debugLineNum = 917523;BA.debugLine="Wait For (api) JobDone( response As HttpJob )";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatos", "create"), (Object)(__ref._api /*b4a.example.httpjob*/ ));
 this.state = 7;
 return;
@@ -123,11 +123,11 @@ case 7:
 this.state = 1;
 _response = (b4a.example.httpjob) result[1];
 ;
-RDebugUtils.currentLine=1441813;
- //BA.debugLineNum = 1441813;BA.debugLine="Dim datos As Campeonato";
+RDebugUtils.currentLine=917525;
+ //BA.debugLineNum = 917525;BA.debugLine="Dim datos As Campeonato";
 _datos = new b4a.example.campeonato();
-RDebugUtils.currentLine=1441814;
- //BA.debugLineNum = 1441814;BA.debugLine="If response.Success Then";
+RDebugUtils.currentLine=917526;
+ //BA.debugLineNum = 917526;BA.debugLine="If response.Success Then";
 if (true) break;
 
 case 1:
@@ -142,19 +142,19 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1441815;
- //BA.debugLineNum = 1441815;BA.debugLine="Log(response.GetString)";
-parent.__c.LogImpl("41441815",_response._getstring /*String*/ (null),0);
-RDebugUtils.currentLine=1441816;
- //BA.debugLineNum = 1441816;BA.debugLine="datos = DeserializarUno( response.GetString )";
+RDebugUtils.currentLine=917527;
+ //BA.debugLineNum = 917527;BA.debugLine="Log(response.GetString)";
+parent.__c.LogImpl("6917527",_response._getstring /*String*/ (null),0);
+RDebugUtils.currentLine=917528;
+ //BA.debugLineNum = 917528;BA.debugLine="datos = DeserializarUno( response.GetString )";
 _datos = __ref._deserializaruno /*b4a.example.campeonato*/ (null,_response._getstring /*String*/ (null));
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1441818;
- //BA.debugLineNum = 1441818;BA.debugLine="datos.Initialize";
+RDebugUtils.currentLine=917530;
+ //BA.debugLineNum = 917530;BA.debugLine="datos.Initialize";
 _datos._initialize /*String*/ (null,ba);
  if (true) break;
 
@@ -162,12 +162,12 @@ case 6:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=1441821;
- //BA.debugLineNum = 1441821;BA.debugLine="Return datos";
+RDebugUtils.currentLine=917533;
+ //BA.debugLineNum = 917533;BA.debugLine="Return datos";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_datos));return;};
-RDebugUtils.currentLine=1441822;
- //BA.debugLineNum = 1441822;BA.debugLine="End Sub";
+RDebugUtils.currentLine=917534;
+ //BA.debugLineNum = 917534;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -181,26 +181,26 @@ if (Debug.shouldDelegate(ba, "deserializaruno", false))
 	 {return ((b4a.example.campeonato) Debug.delegate(ba, "deserializaruno", new Object[] {_jsontxt}));}
 anywheresoftware.b4a.objects.collections.JSONParser _jsonparser = null;
 anywheresoftware.b4a.objects.collections.Map _datos = null;
-RDebugUtils.currentLine=1835008;
- //BA.debugLineNum = 1835008;BA.debugLine="Private Sub DeserializarUno( jsonTxt As String) As";
-RDebugUtils.currentLine=1835009;
- //BA.debugLineNum = 1835009;BA.debugLine="Dim jsonParser As JSONParser";
+RDebugUtils.currentLine=1310720;
+ //BA.debugLineNum = 1310720;BA.debugLine="Private Sub DeserializarUno( jsonTxt As String) As";
+RDebugUtils.currentLine=1310721;
+ //BA.debugLineNum = 1310721;BA.debugLine="Dim jsonParser As JSONParser";
 _jsonparser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=1835010;
- //BA.debugLineNum = 1835010;BA.debugLine="jsonParser.Initialize(jsonTxt)";
+RDebugUtils.currentLine=1310722;
+ //BA.debugLineNum = 1310722;BA.debugLine="jsonParser.Initialize(jsonTxt)";
 _jsonparser.Initialize(_jsontxt);
-RDebugUtils.currentLine=1835012;
- //BA.debugLineNum = 1835012;BA.debugLine="Dim datos As Map = jsonParser.NextObject";
+RDebugUtils.currentLine=1310724;
+ //BA.debugLineNum = 1310724;BA.debugLine="Dim datos As Map = jsonParser.NextObject";
 _datos = new anywheresoftware.b4a.objects.collections.Map();
 _datos = _jsonparser.NextObject();
-RDebugUtils.currentLine=1835013;
- //BA.debugLineNum = 1835013;BA.debugLine="Log(datos)";
-__c.LogImpl("41835013",BA.ObjectToString(_datos),0);
-RDebugUtils.currentLine=1835014;
- //BA.debugLineNum = 1835014;BA.debugLine="Return MapToCampeonato(datos)";
+RDebugUtils.currentLine=1310725;
+ //BA.debugLineNum = 1310725;BA.debugLine="Log(datos)";
+__c.LogImpl("61310725",BA.ObjectToString(_datos),0);
+RDebugUtils.currentLine=1310726;
+ //BA.debugLineNum = 1310726;BA.debugLine="Return MapToCampeonato(datos)";
 if (true) return __ref._maptocampeonato /*b4a.example.campeonato*/ (null,_datos);
-RDebugUtils.currentLine=1835015;
- //BA.debugLineNum = 1835015;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1310727;
+ //BA.debugLineNum = 1310727;BA.debugLine="End Sub";
 return null;
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _delete(b4a.example.campeonatos __ref,String _id) throws Exception{
@@ -235,14 +235,14 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=1703938;
- //BA.debugLineNum = 1703938;BA.debugLine="Log(Id)";
-parent.__c.LogImpl("41703938",_id,0);
-RDebugUtils.currentLine=1703939;
- //BA.debugLineNum = 1703939;BA.debugLine="api.Delete(apiUrl & \"/\" & Id)";
+RDebugUtils.currentLine=1179650;
+ //BA.debugLineNum = 1179650;BA.debugLine="Log(Id)";
+parent.__c.LogImpl("61179650",_id,0);
+RDebugUtils.currentLine=1179651;
+ //BA.debugLineNum = 1179651;BA.debugLine="api.Delete(apiUrl & \"/\" & Id)";
 __ref._api /*b4a.example.httpjob*/ ._delete /*String*/ (null,__ref._apiurl /*String*/ +"/"+_id);
-RDebugUtils.currentLine=1703942;
- //BA.debugLineNum = 1703942;BA.debugLine="Wait For (api) JobDone( respuesta As HttpJob)";
+RDebugUtils.currentLine=1179654;
+ //BA.debugLineNum = 1179654;BA.debugLine="Wait For (api) JobDone( respuesta As HttpJob)";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatos", "delete"), (Object)(__ref._api /*b4a.example.httpjob*/ ));
 this.state = 7;
 return;
@@ -251,8 +251,8 @@ case 7:
 this.state = 1;
 _respuesta = (b4a.example.httpjob) result[1];
 ;
-RDebugUtils.currentLine=1703943;
- //BA.debugLineNum = 1703943;BA.debugLine="If respuesta.Success Then";
+RDebugUtils.currentLine=1179655;
+ //BA.debugLineNum = 1179655;BA.debugLine="If respuesta.Success Then";
 if (true) break;
 
 case 1:
@@ -267,8 +267,8 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1703944;
- //BA.debugLineNum = 1703944;BA.debugLine="Return 0";
+RDebugUtils.currentLine=1179656;
+ //BA.debugLineNum = 1179656;BA.debugLine="Return 0";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(0));return;};
  if (true) break;
@@ -276,8 +276,8 @@ parent.__c.ReturnFromResumableSub(this,(Object)(0));return;};
 case 5:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1703946;
- //BA.debugLineNum = 1703946;BA.debugLine="Return respuesta.Response.StatusCode";
+RDebugUtils.currentLine=1179658;
+ //BA.debugLineNum = 1179658;BA.debugLine="Return respuesta.Response.StatusCode";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_respuesta._response /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/ .getStatusCode()));return;};
  if (true) break;
@@ -286,8 +286,8 @@ case 6:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=1703948;
- //BA.debugLineNum = 1703948;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1179660;
+ //BA.debugLineNum = 1179660;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -303,26 +303,26 @@ anywheresoftware.b4a.objects.collections.List _list = null;
 anywheresoftware.b4a.objects.collections.JSONParser _jsonparser = null;
 anywheresoftware.b4a.objects.collections.List _datos = null;
 anywheresoftware.b4a.objects.collections.Map _item = null;
-RDebugUtils.currentLine=1900544;
- //BA.debugLineNum = 1900544;BA.debugLine="Private Sub DeserializarLista( jsonTxt As String)";
-RDebugUtils.currentLine=1900545;
- //BA.debugLineNum = 1900545;BA.debugLine="Dim list 		As List";
+RDebugUtils.currentLine=1376256;
+ //BA.debugLineNum = 1376256;BA.debugLine="Private Sub DeserializarLista( jsonTxt As String)";
+RDebugUtils.currentLine=1376257;
+ //BA.debugLineNum = 1376257;BA.debugLine="Dim list 		As List";
 _list = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=1900546;
- //BA.debugLineNum = 1900546;BA.debugLine="Dim jsonParser	As JSONParser";
+RDebugUtils.currentLine=1376258;
+ //BA.debugLineNum = 1376258;BA.debugLine="Dim jsonParser	As JSONParser";
 _jsonparser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=1900548;
- //BA.debugLineNum = 1900548;BA.debugLine="list.Initialize";
+RDebugUtils.currentLine=1376260;
+ //BA.debugLineNum = 1376260;BA.debugLine="list.Initialize";
 _list.Initialize();
-RDebugUtils.currentLine=1900549;
- //BA.debugLineNum = 1900549;BA.debugLine="jsonParser.Initialize( jsonTxt )";
+RDebugUtils.currentLine=1376261;
+ //BA.debugLineNum = 1376261;BA.debugLine="jsonParser.Initialize( jsonTxt )";
 _jsonparser.Initialize(_jsontxt);
-RDebugUtils.currentLine=1900551;
- //BA.debugLineNum = 1900551;BA.debugLine="Dim datos As List = jsonParser.NextArray";
+RDebugUtils.currentLine=1376263;
+ //BA.debugLineNum = 1376263;BA.debugLine="Dim datos As List = jsonParser.NextArray";
 _datos = new anywheresoftware.b4a.objects.collections.List();
 _datos = _jsonparser.NextArray();
-RDebugUtils.currentLine=1900552;
- //BA.debugLineNum = 1900552;BA.debugLine="For Each item As Map In datos";
+RDebugUtils.currentLine=1376264;
+ //BA.debugLineNum = 1376264;BA.debugLine="For Each item As Map In datos";
 _item = new anywheresoftware.b4a.objects.collections.Map();
 {
 final anywheresoftware.b4a.BA.IterableList group6 = _datos;
@@ -331,16 +331,16 @@ final int groupLen6 = group6.getSize()
 ;
 for (; index6 < groupLen6;index6++){
 _item = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (anywheresoftware.b4a.objects.collections.Map.MyMap)(group6.Get(index6)));
-RDebugUtils.currentLine=1900553;
- //BA.debugLineNum = 1900553;BA.debugLine="list.Add( MapToCampeonato( item ))";
+RDebugUtils.currentLine=1376265;
+ //BA.debugLineNum = 1376265;BA.debugLine="list.Add( MapToCampeonato( item ))";
 _list.Add((Object)(__ref._maptocampeonato /*b4a.example.campeonato*/ (null,_item)));
  }
 };
-RDebugUtils.currentLine=1900556;
- //BA.debugLineNum = 1900556;BA.debugLine="Return list";
+RDebugUtils.currentLine=1376268;
+ //BA.debugLineNum = 1376268;BA.debugLine="Return list";
 if (true) return _list;
-RDebugUtils.currentLine=1900557;
- //BA.debugLineNum = 1900557;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1376269;
+ //BA.debugLineNum = 1376269;BA.debugLine="End Sub";
 return null;
 }
 public b4a.example.campeonato  _maptocampeonato(b4a.example.campeonatos __ref,anywheresoftware.b4a.objects.collections.Map _datos) throws Exception{
@@ -349,34 +349,34 @@ RDebugUtils.currentModule="campeonatos";
 if (Debug.shouldDelegate(ba, "maptocampeonato", false))
 	 {return ((b4a.example.campeonato) Debug.delegate(ba, "maptocampeonato", new Object[] {_datos}));}
 b4a.example.campeonato _camp = null;
-RDebugUtils.currentLine=1769472;
- //BA.debugLineNum = 1769472;BA.debugLine="Private Sub MapToCampeonato( datos As Map ) As Cam";
-RDebugUtils.currentLine=1769473;
- //BA.debugLineNum = 1769473;BA.debugLine="Dim camp As Campeonato";
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Private Sub MapToCampeonato( datos As Map ) As Cam";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="Dim camp As Campeonato";
 _camp = new b4a.example.campeonato();
-RDebugUtils.currentLine=1769474;
- //BA.debugLineNum = 1769474;BA.debugLine="camp.Initialize";
+RDebugUtils.currentLine=1245186;
+ //BA.debugLineNum = 1245186;BA.debugLine="camp.Initialize";
 _camp._initialize /*String*/ (null,ba);
-RDebugUtils.currentLine=1769477;
- //BA.debugLineNum = 1769477;BA.debugLine="camp.Nombre              = datos.Get(\"nombre\")";
+RDebugUtils.currentLine=1245189;
+ //BA.debugLineNum = 1245189;BA.debugLine="camp.Nombre              = datos.Get(\"nombre\")";
 _camp._nombre /*String*/  = BA.ObjectToString(_datos.Get((Object)("nombre")));
-RDebugUtils.currentLine=1769478;
- //BA.debugLineNum = 1769478;BA.debugLine="camp.Estado 		     = datos.Get(\"estado\")";
+RDebugUtils.currentLine=1245190;
+ //BA.debugLineNum = 1245190;BA.debugLine="camp.Estado 		     = datos.Get(\"estado\")";
 _camp._estado /*int*/  = (int)(BA.ObjectToNumber(_datos.Get((Object)("estado"))));
-RDebugUtils.currentLine=1769479;
- //BA.debugLineNum = 1769479;BA.debugLine="camp.Fecha_Inicio        = datos.Get(\"fecha_inici";
+RDebugUtils.currentLine=1245191;
+ //BA.debugLineNum = 1245191;BA.debugLine="camp.Fecha_Inicio        = datos.Get(\"fecha_inici";
 _camp._fecha_inicio /*String*/  = BA.ObjectToString(_datos.Get((Object)("fecha_inicio")));
-RDebugUtils.currentLine=1769480;
- //BA.debugLineNum = 1769480;BA.debugLine="camp.Imagen       		 = datos.Get(\"imagen\")";
+RDebugUtils.currentLine=1245192;
+ //BA.debugLineNum = 1245192;BA.debugLine="camp.Imagen       		 = datos.Get(\"imagen\")";
 _camp._imagen /*String*/  = BA.ObjectToString(_datos.Get((Object)("imagen")));
-RDebugUtils.currentLine=1769481;
- //BA.debugLineNum = 1769481;BA.debugLine="camp.Delete_Status       = datos.Get(\"delete_stat";
+RDebugUtils.currentLine=1245193;
+ //BA.debugLineNum = 1245193;BA.debugLine="camp.Delete_Status       = datos.Get(\"delete_stat";
 _camp._delete_status /*int*/  = (int)(BA.ObjectToNumber(_datos.Get((Object)("delete_status"))));
-RDebugUtils.currentLine=1769483;
- //BA.debugLineNum = 1769483;BA.debugLine="Return camp";
+RDebugUtils.currentLine=1245195;
+ //BA.debugLineNum = 1245195;BA.debugLine="Return camp";
 if (true) return _camp;
-RDebugUtils.currentLine=1769484;
- //BA.debugLineNum = 1769484;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1245196;
+ //BA.debugLineNum = 1245196;BA.debugLine="End Sub";
 return null;
 }
 public String  _initialize(b4a.example.campeonatos __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -385,13 +385,13 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="campeonatos";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="api.Initialize(\"\", Me)";
+RDebugUtils.currentLine=851968;
+ //BA.debugLineNum = 851968;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=851969;
+ //BA.debugLineNum = 851969;BA.debugLine="api.Initialize(\"\", Me)";
 __ref._api /*b4a.example.httpjob*/ ._initialize /*String*/ (null,ba,"",this);
-RDebugUtils.currentLine=1376258;
- //BA.debugLineNum = 1376258;BA.debugLine="End Sub";
+RDebugUtils.currentLine=851970;
+ //BA.debugLineNum = 851970;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _read_all(b4a.example.campeonatos __ref) throws Exception{
@@ -425,11 +425,11 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=1507331;
- //BA.debugLineNum = 1507331;BA.debugLine="api.Download(apiUrl)";
+RDebugUtils.currentLine=983043;
+ //BA.debugLineNum = 983043;BA.debugLine="api.Download(apiUrl)";
 __ref._api /*b4a.example.httpjob*/ ._download /*String*/ (null,__ref._apiurl /*String*/ );
-RDebugUtils.currentLine=1507334;
- //BA.debugLineNum = 1507334;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
+RDebugUtils.currentLine=983046;
+ //BA.debugLineNum = 983046;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatos", "read_all"), (Object)(__ref._api /*b4a.example.httpjob*/ ));
 this.state = 7;
 return;
@@ -438,11 +438,11 @@ case 7:
 this.state = 1;
 _response = (b4a.example.httpjob) result[1];
 ;
-RDebugUtils.currentLine=1507336;
- //BA.debugLineNum = 1507336;BA.debugLine="Dim datos As List";
+RDebugUtils.currentLine=983048;
+ //BA.debugLineNum = 983048;BA.debugLine="Dim datos As List";
 _datos = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=1507337;
- //BA.debugLineNum = 1507337;BA.debugLine="If response.Success Then";
+RDebugUtils.currentLine=983049;
+ //BA.debugLineNum = 983049;BA.debugLine="If response.Success Then";
 if (true) break;
 
 case 1:
@@ -457,16 +457,16 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1507338;
- //BA.debugLineNum = 1507338;BA.debugLine="datos = DeserializarLista( response.GetString )";
+RDebugUtils.currentLine=983050;
+ //BA.debugLineNum = 983050;BA.debugLine="datos = DeserializarLista( response.GetString )";
 _datos = __ref._deserializarlista /*anywheresoftware.b4a.objects.collections.List*/ (null,_response._getstring /*String*/ (null));
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1507340;
- //BA.debugLineNum = 1507340;BA.debugLine="datos.Initialize";
+RDebugUtils.currentLine=983052;
+ //BA.debugLineNum = 983052;BA.debugLine="datos.Initialize";
 _datos.Initialize();
  if (true) break;
 
@@ -474,12 +474,12 @@ case 6:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=1507343;
- //BA.debugLineNum = 1507343;BA.debugLine="Return datos";
+RDebugUtils.currentLine=983055;
+ //BA.debugLineNum = 983055;BA.debugLine="Return datos";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_datos));return;};
-RDebugUtils.currentLine=1507344;
- //BA.debugLineNum = 1507344;BA.debugLine="End Sub";
+RDebugUtils.currentLine=983056;
+ //BA.debugLineNum = 983056;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -519,11 +519,11 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="api.Download( apiUrl & \"/\" & Id)";
+RDebugUtils.currentLine=1048578;
+ //BA.debugLineNum = 1048578;BA.debugLine="api.Download( apiUrl & \"/\" & Id)";
 __ref._api /*b4a.example.httpjob*/ ._download /*String*/ (null,__ref._apiurl /*String*/ +"/"+_id);
-RDebugUtils.currentLine=1572869;
- //BA.debugLineNum = 1572869;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
+RDebugUtils.currentLine=1048581;
+ //BA.debugLineNum = 1048581;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatos", "read_one"), (Object)(__ref._api /*b4a.example.httpjob*/ ));
 this.state = 7;
 return;
@@ -532,11 +532,11 @@ case 7:
 this.state = 1;
 _response = (b4a.example.httpjob) result[1];
 ;
-RDebugUtils.currentLine=1572870;
- //BA.debugLineNum = 1572870;BA.debugLine="Dim datos As Campeonato";
+RDebugUtils.currentLine=1048582;
+ //BA.debugLineNum = 1048582;BA.debugLine="Dim datos As Campeonato";
 _datos = new b4a.example.campeonato();
-RDebugUtils.currentLine=1572871;
- //BA.debugLineNum = 1572871;BA.debugLine="If response.Success Then";
+RDebugUtils.currentLine=1048583;
+ //BA.debugLineNum = 1048583;BA.debugLine="If response.Success Then";
 if (true) break;
 
 case 1:
@@ -551,16 +551,16 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1572872;
- //BA.debugLineNum = 1572872;BA.debugLine="datos = DeserializarUno( response.GetString )";
+RDebugUtils.currentLine=1048584;
+ //BA.debugLineNum = 1048584;BA.debugLine="datos = DeserializarUno( response.GetString )";
 _datos = __ref._deserializaruno /*b4a.example.campeonato*/ (null,_response._getstring /*String*/ (null));
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1572874;
- //BA.debugLineNum = 1572874;BA.debugLine="datos.Initialize";
+RDebugUtils.currentLine=1048586;
+ //BA.debugLineNum = 1048586;BA.debugLine="datos.Initialize";
 _datos._initialize /*String*/ (null,ba);
  if (true) break;
 
@@ -568,12 +568,12 @@ case 6:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=1572877;
- //BA.debugLineNum = 1572877;BA.debugLine="Return datos";
+RDebugUtils.currentLine=1048589;
+ //BA.debugLineNum = 1048589;BA.debugLine="Return datos";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_datos));return;};
-RDebugUtils.currentLine=1572878;
- //BA.debugLineNum = 1572878;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1048590;
+ //BA.debugLineNum = 1048590;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -624,23 +624,23 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=1638402;
- //BA.debugLineNum = 1638402;BA.debugLine="Dim jsonGen As JSONGenerator";
+RDebugUtils.currentLine=1114114;
+ //BA.debugLineNum = 1114114;BA.debugLine="Dim jsonGen As JSONGenerator";
 _jsongen = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
-RDebugUtils.currentLine=1638403;
- //BA.debugLineNum = 1638403;BA.debugLine="jsonGen.Initialize( CreateMap ( _ 		\"id\" : Id, _";
+RDebugUtils.currentLine=1114115;
+ //BA.debugLineNum = 1114115;BA.debugLine="jsonGen.Initialize( CreateMap ( _ 		\"id\" : Id, _";
 _jsongen.Initialize(parent.__c.createMap(new Object[] {(Object)("id"),(Object)(_id),(Object)("nombre"),(Object)(_nombre),(Object)("estado"),(Object)(_estado),(Object)("fecha_inicio"),(Object)(_fecha_inicio),(Object)("imagen"),(Object)(_imagen),(Object)("delete_status"),(Object)(_delete_status)}));
-RDebugUtils.currentLine=1638412;
- //BA.debugLineNum = 1638412;BA.debugLine="Dim jsonTxt As String = jsonGen.ToString";
+RDebugUtils.currentLine=1114124;
+ //BA.debugLineNum = 1114124;BA.debugLine="Dim jsonTxt As String = jsonGen.ToString";
 _jsontxt = _jsongen.ToString();
-RDebugUtils.currentLine=1638415;
- //BA.debugLineNum = 1638415;BA.debugLine="api.PutString( apiUrl, jsonTxt)";
+RDebugUtils.currentLine=1114127;
+ //BA.debugLineNum = 1114127;BA.debugLine="api.PutString( apiUrl, jsonTxt)";
 __ref._api /*b4a.example.httpjob*/ ._putstring /*String*/ (null,__ref._apiurl /*String*/ ,_jsontxt);
-RDebugUtils.currentLine=1638416;
- //BA.debugLineNum = 1638416;BA.debugLine="api.GetRequest.SetContentType(\"application/json\")";
+RDebugUtils.currentLine=1114128;
+ //BA.debugLineNum = 1114128;BA.debugLine="api.GetRequest.SetContentType(\"application/json\")";
 __ref._api /*b4a.example.httpjob*/ ._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null).SetContentType("application/json");
-RDebugUtils.currentLine=1638419;
- //BA.debugLineNum = 1638419;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
+RDebugUtils.currentLine=1114131;
+ //BA.debugLineNum = 1114131;BA.debugLine="Wait For (api) JobDone( response As HttpJob)";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatos", "update"), (Object)(__ref._api /*b4a.example.httpjob*/ ));
 this.state = 7;
 return;
@@ -649,8 +649,8 @@ case 7:
 this.state = 1;
 _response = (b4a.example.httpjob) result[1];
 ;
-RDebugUtils.currentLine=1638420;
- //BA.debugLineNum = 1638420;BA.debugLine="If response.Success Then";
+RDebugUtils.currentLine=1114132;
+ //BA.debugLineNum = 1114132;BA.debugLine="If response.Success Then";
 if (true) break;
 
 case 1:
@@ -665,8 +665,8 @@ this.state = 5;
 case 3:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1638421;
- //BA.debugLineNum = 1638421;BA.debugLine="Return 0";
+RDebugUtils.currentLine=1114133;
+ //BA.debugLineNum = 1114133;BA.debugLine="Return 0";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(0));return;};
  if (true) break;
@@ -674,8 +674,8 @@ parent.__c.ReturnFromResumableSub(this,(Object)(0));return;};
 case 5:
 //C
 this.state = 6;
-RDebugUtils.currentLine=1638423;
- //BA.debugLineNum = 1638423;BA.debugLine="Return response.Response.StatusCode";
+RDebugUtils.currentLine=1114135;
+ //BA.debugLineNum = 1114135;BA.debugLine="Return response.Response.StatusCode";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,(Object)(_response._response /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/ .getStatusCode()));return;};
  if (true) break;
@@ -684,8 +684,8 @@ case 6:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=1638425;
- //BA.debugLineNum = 1638425;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1114137;
+ //BA.debugLineNum = 1114137;BA.debugLine="End Sub";
 if (true) break;
 
             }

@@ -25,16 +25,18 @@ Library4=xui
 Library5=xcustomlistview
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Campeonato
+Module10=Starter
 Module2=Campeonatos
 Module3=CampeonatosEquipos
 Module4=CampEquipos
 Module5=Equipo
 Module6=inicio
 Module7=inicios
-Module8=Starter
+Module8=Login
+Module9=loginModel
 NumberOfFiles=9
 NumberOfLibraries=5
-NumberOfModules=8
+NumberOfModules=10
 Version=11.5
 @EndOfDesignText@
 #Region  Activity Attributes 
@@ -46,8 +48,9 @@ Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
 	Private xui As XUI
-	Private ini As inicios
+	Private logi As loginModel
 	Dim idCampeonato As String
+	Dim token As String
 End Sub
 
 Sub Globals
@@ -61,13 +64,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	'Activity.LoadLayout("Layout1")
 	Activity.LoadLayout("1LoginBochaScore")
-	ini.Initialize
+	logi.Initialize
 	txtUsuario.SingleLine=False
 	txtContrasenia.SingleLine=False
     Dim cd As ColorDrawable
     cd.Initialize2(Colors.Transparent, 10dip,1dip,Colors.White)
 	txtUsuario.Background=cd
 	txtContrasenia.Background=cd
+	txtContrasenia.PasswordMode = True
 End Sub
 
 Sub Activity_Resume
@@ -79,24 +83,18 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub btnEntrar_Click
-	'Wait For (ini.Create(txtUsuario.Text,txtContrasenia.Text)) Complete( resultado As inicio )
-	'If resultado.Username = "" Then
-	'	xui.MsgboxAsync("Login Exitoso !!", "OK")
-	'	txtUsuario.Text = resultado.Username
-	''	txtContrasenia.Text = resultado.Contrasenia
-	'	StartActivity(CampeonatosEquipos)
-	'Else
-	'	xui.MsgboxAsync("REGISTRO NO SE PUDO CREAR!!", "ERROR")
-	'End If
 	
-	'Wait For (ini.Read_One(txtUsuario.Text)) Complete ( respuesta As inicio)
-	'If respuesta.Username <> 0 Then
-		
-	'xui.MsgboxAsync("REGISTRO ENCONTRADO !!", "OK")
-	'StartActivity(CampeonatosEquipos)
-	'Else
-	'xui.MsgboxAsync("REGISTRO NO ENCONTRADO !!", "ERROR")
-	'End If
-	idCampeonato = txtUsuario.Text
-	StartActivity(CampeonatosEquipos)
+	
+	Wait For (logi.Login_Post(txtUsuario.Text,txtContrasenia.Text)) Complete( resultado As Login )
+	Log(resultado.CampeonatoId <> "")
+	If resultado.CampeonatoId <> ""  Then
+		idCampeonato = resultado.CampeonatoId
+		token = resultado.Token
+		StartActivity(CampeonatosEquipos)
+		Activity.Finish
+	Else
+		xui.MsgboxAsync("Error al ingresar", "ERROR")
+	End If
+	
+	
 End Sub

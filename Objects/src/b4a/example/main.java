@@ -392,8 +392,9 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
-public static b4a.example.inicios _ini = null;
+public static b4a.example.loginmodel _logi = null;
 public static String _idcampeonato = "";
+public static String _token = "";
 public anywheresoftware.b4a.objects.EditTextWrapper _txtusuario = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtcontrasenia = null;
 public b4a.example.starter _starter = null;
@@ -410,8 +411,8 @@ RDebugUtils.currentLine=131075;
  //BA.debugLineNum = 131075;BA.debugLine="Activity.LoadLayout(\"1LoginBochaScore\")";
 mostCurrent._activity.LoadLayout("1LoginBochaScore",mostCurrent.activityBA);
 RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="ini.Initialize";
-_ini._initialize /*String*/ (null,processBA);
+ //BA.debugLineNum = 131076;BA.debugLine="logi.Initialize";
+_logi._initialize /*String*/ (null,processBA);
 RDebugUtils.currentLine=131077;
  //BA.debugLineNum = 131077;BA.debugLine="txtUsuario.SingleLine=False";
 mostCurrent._txtusuario.setSingleLine(anywheresoftware.b4a.keywords.Common.False);
@@ -431,7 +432,10 @@ RDebugUtils.currentLine=131082;
  //BA.debugLineNum = 131082;BA.debugLine="txtContrasenia.Background=cd";
 mostCurrent._txtcontrasenia.setBackground((android.graphics.drawable.Drawable)(_cd.getObject()));
 RDebugUtils.currentLine=131083;
- //BA.debugLineNum = 131083;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131083;BA.debugLine="txtContrasenia.PasswordMode = True";
+mostCurrent._txtcontrasenia.setPasswordMode(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=131084;
+ //BA.debugLineNum = 131084;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -452,20 +456,93 @@ RDebugUtils.currentLine=196610;
  //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
-public static String  _btnentrar_click() throws Exception{
+public static void  _btnentrar_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnentrar_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnentrar_click", null));}
-RDebugUtils.currentLine=8388608;
- //BA.debugLineNum = 8388608;BA.debugLine="Sub btnEntrar_Click";
-RDebugUtils.currentLine=8388627;
- //BA.debugLineNum = 8388627;BA.debugLine="idCampeonato = txtUsuario.Text";
-_idcampeonato = mostCurrent._txtusuario.getText();
-RDebugUtils.currentLine=8388628;
- //BA.debugLineNum = 8388628;BA.debugLine="StartActivity(CampeonatosEquipos)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._campeonatosequipos.getObject()));
-RDebugUtils.currentLine=8388629;
- //BA.debugLineNum = 8388629;BA.debugLine="End Sub";
-return "";
+	 {Debug.delegate(mostCurrent.activityBA, "btnentrar_click", null); return;}
+ResumableSub_btnEntrar_Click rsub = new ResumableSub_btnEntrar_Click(null);
+rsub.resume(processBA, null);
+}
+public static class ResumableSub_btnEntrar_Click extends BA.ResumableSub {
+public ResumableSub_btnEntrar_Click(b4a.example.main parent) {
+this.parent = parent;
+}
+b4a.example.main parent;
+b4a.example.login _resultado = null;
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="main";
+
+    while (true) {
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
+RDebugUtils.currentLine=327683;
+ //BA.debugLineNum = 327683;BA.debugLine="Wait For (logi.Login_Post(txtUsuario.Text,txtCont";
+anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "main", "btnentrar_click"), parent._logi._login_post /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (null,parent.mostCurrent._txtusuario.getText(),parent.mostCurrent._txtcontrasenia.getText()));
+this.state = 7;
+return;
+case 7:
+//C
+this.state = 1;
+_resultado = (b4a.example.login) result[0];
+;
+RDebugUtils.currentLine=327684;
+ //BA.debugLineNum = 327684;BA.debugLine="Log(resultado.CampeonatoId <> \"\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("6327684",BA.ObjectToString((_resultado._campeonatoid /*String*/ ).equals("") == false),0);
+RDebugUtils.currentLine=327685;
+ //BA.debugLineNum = 327685;BA.debugLine="If resultado.CampeonatoId <> \"\"  Then";
+if (true) break;
+
+case 1:
+//if
+this.state = 6;
+if ((_resultado._campeonatoid /*String*/ ).equals("") == false) { 
+this.state = 3;
+}else {
+this.state = 5;
+}if (true) break;
+
+case 3:
+//C
+this.state = 6;
+RDebugUtils.currentLine=327686;
+ //BA.debugLineNum = 327686;BA.debugLine="idCampeonato = resultado.CampeonatoId";
+parent._idcampeonato = _resultado._campeonatoid /*String*/ ;
+RDebugUtils.currentLine=327687;
+ //BA.debugLineNum = 327687;BA.debugLine="token = resultado.Token";
+parent._token = _resultado._token /*String*/ ;
+RDebugUtils.currentLine=327688;
+ //BA.debugLineNum = 327688;BA.debugLine="StartActivity(CampeonatosEquipos)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(parent.mostCurrent._campeonatosequipos.getObject()));
+RDebugUtils.currentLine=327689;
+ //BA.debugLineNum = 327689;BA.debugLine="Activity.Finish";
+parent.mostCurrent._activity.Finish();
+ if (true) break;
+
+case 5:
+//C
+this.state = 6;
+RDebugUtils.currentLine=327691;
+ //BA.debugLineNum = 327691;BA.debugLine="xui.MsgboxAsync(\"Error al ingresar\", \"ERROR\")";
+parent._xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("Error al ingresar"),BA.ObjectToCharSequence("ERROR"));
+ if (true) break;
+
+case 6:
+//C
+this.state = -1;
+;
+RDebugUtils.currentLine=327695;
+ //BA.debugLineNum = 327695;BA.debugLine="End Sub";
+if (true) break;
+
+            }
+        }
+    }
 }
 }

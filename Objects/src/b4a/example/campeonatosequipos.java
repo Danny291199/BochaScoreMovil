@@ -388,23 +388,23 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=2752516;
- //BA.debugLineNum = 2752516;BA.debugLine="Activity.LoadLayout(\"listaEquiposbyCampeonatos\")";
+RDebugUtils.currentLine=2228228;
+ //BA.debugLineNum = 2228228;BA.debugLine="Activity.LoadLayout(\"listaEquiposbyCampeonatos\")";
 parent.mostCurrent._activity.LoadLayout("listaEquiposbyCampeonatos",mostCurrent.activityBA);
-RDebugUtils.currentLine=2752517;
- //BA.debugLineNum = 2752517;BA.debugLine="Dim Job As HttpJob";
+RDebugUtils.currentLine=2228229;
+ //BA.debugLineNum = 2228229;BA.debugLine="Dim Job As HttpJob";
 _job = new b4a.example.httpjob();
-RDebugUtils.currentLine=2752518;
- //BA.debugLineNum = 2752518;BA.debugLine="Job.Initialize(\"Job\",Me)";
+RDebugUtils.currentLine=2228230;
+ //BA.debugLineNum = 2228230;BA.debugLine="Job.Initialize(\"Job\",Me)";
 _job._initialize /*String*/ (null,processBA,"Job",campeonatosequipos.getObject());
-RDebugUtils.currentLine=2752519;
- //BA.debugLineNum = 2752519;BA.debugLine="lstEquipos.SingleLineLayout.Label.TextColor=Color";
+RDebugUtils.currentLine=2228231;
+ //BA.debugLineNum = 2228231;BA.debugLine="lstEquipos.SingleLineLayout.Label.TextColor=Color";
 parent.mostCurrent._lstequipos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=2752522;
- //BA.debugLineNum = 2752522;BA.debugLine="camp_equi.Initialize";
+RDebugUtils.currentLine=2228234;
+ //BA.debugLineNum = 2228234;BA.debugLine="camp_equi.Initialize";
 parent._camp_equi._initialize /*String*/ (null,processBA);
-RDebugUtils.currentLine=2752523;
- //BA.debugLineNum = 2752523;BA.debugLine="Wait For (camp_equi.Read_One(Main.idCampeonato))";
+RDebugUtils.currentLine=2228235;
+ //BA.debugLineNum = 2228235;BA.debugLine="Wait For (camp_equi.Read_One(Main.idCampeonato))";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatosequipos", "activity_create"), parent._camp_equi._read_one /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (null,parent.mostCurrent._main._idcampeonato /*String*/ ));
 this.state = 13;
 return;
@@ -413,14 +413,14 @@ case 13:
 this.state = 1;
 _respuesta = (b4a.example.campeonato) result[0];
 ;
-RDebugUtils.currentLine=2752524;
- //BA.debugLineNum = 2752524;BA.debugLine="Job.Download(respuesta.Imagen)";
+RDebugUtils.currentLine=2228236;
+ //BA.debugLineNum = 2228236;BA.debugLine="Job.Download(respuesta.Imagen)";
 _job._download /*String*/ (null,_respuesta._imagen /*String*/ );
-RDebugUtils.currentLine=2752525;
- //BA.debugLineNum = 2752525;BA.debugLine="txtNomCamp.Text = respuesta.Nombre";
+RDebugUtils.currentLine=2228237;
+ //BA.debugLineNum = 2228237;BA.debugLine="txtNomCamp.Text = respuesta.Nombre";
 parent.mostCurrent._txtnomcamp.setText(BA.ObjectToCharSequence(_respuesta._nombre /*String*/ ));
-RDebugUtils.currentLine=2752526;
- //BA.debugLineNum = 2752526;BA.debugLine="Wait For (Job) JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=2228238;
+ //BA.debugLineNum = 2228238;BA.debugLine="Wait For (Job) JobDone (Job As HttpJob)";
 anywheresoftware.b4a.keywords.Common.WaitFor("jobdone", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatosequipos", "activity_create"), (Object)(_job));
 this.state = 14;
 return;
@@ -429,8 +429,8 @@ case 14:
 this.state = 1;
 _job = (b4a.example.httpjob) result[0];
 ;
-RDebugUtils.currentLine=2752527;
- //BA.debugLineNum = 2752527;BA.debugLine="If Job.Success = True Then";
+RDebugUtils.currentLine=2228239;
+ //BA.debugLineNum = 2228239;BA.debugLine="If Job.Success = True Then";
 if (true) break;
 
 case 1:
@@ -443,8 +443,8 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=2752528;
- //BA.debugLineNum = 2752528;BA.debugLine="ImgCamp.Bitmap = Job.GetBitmap";
+RDebugUtils.currentLine=2228240;
+ //BA.debugLineNum = 2228240;BA.debugLine="ImgCamp.Bitmap = Job.GetBitmap";
 parent.mostCurrent._imgcamp.setBitmap((android.graphics.Bitmap)(_job._getbitmap /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (null).getObject()));
  if (true) break;
 
@@ -452,8 +452,8 @@ case 4:
 //C
 this.state = 5;
 ;
-RDebugUtils.currentLine=2752532;
- //BA.debugLineNum = 2752532;BA.debugLine="Wait For (camp_equi.Read_All_Equipos_By_Campeonat";
+RDebugUtils.currentLine=2228244;
+ //BA.debugLineNum = 2228244;BA.debugLine="Wait For (camp_equi.Read_All_Equipos_By_Campeonat";
 anywheresoftware.b4a.keywords.Common.WaitFor("complete", processBA, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "campeonatosequipos", "activity_create"), parent._camp_equi._read_all_equipos_by_campeonato /*anywheresoftware.b4a.keywords.Common.ResumableSubWrapper*/ (null,parent.mostCurrent._main._idcampeonato /*String*/ ));
 this.state = 15;
 return;
@@ -462,8 +462,8 @@ case 15:
 this.state = 5;
 _respuestalista = (anywheresoftware.b4a.objects.collections.List) result[0];
 ;
-RDebugUtils.currentLine=2752533;
- //BA.debugLineNum = 2752533;BA.debugLine="If respuestalista.Size > 0 Then";
+RDebugUtils.currentLine=2228245;
+ //BA.debugLineNum = 2228245;BA.debugLine="If respuestalista.Size > 0 Then";
 if (true) break;
 
 case 5:
@@ -476,8 +476,8 @@ this.state = 7;
 case 7:
 //C
 this.state = 8;
-RDebugUtils.currentLine=2752534;
- //BA.debugLineNum = 2752534;BA.debugLine="For Each equip As Equipo In respuestalista";
+RDebugUtils.currentLine=2228246;
+ //BA.debugLineNum = 2228246;BA.debugLine="For Each equip As Equipo In respuestalista";
 if (true) break;
 
 case 8:
@@ -506,8 +506,8 @@ if (true) break;
 case 10:
 //C
 this.state = 17;
-RDebugUtils.currentLine=2752535;
- //BA.debugLineNum = 2752535;BA.debugLine="lstEquipos.AddSingleLine(equip.Nombre)";
+RDebugUtils.currentLine=2228247;
+ //BA.debugLineNum = 2228247;BA.debugLine="lstEquipos.AddSingleLine(equip.Nombre)";
 parent.mostCurrent._lstequipos.AddSingleLine(BA.ObjectToCharSequence(_equip._nombre /*String*/ ));
  if (true) break;
 if (true) break;
@@ -522,8 +522,8 @@ case 12:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=2752539;
- //BA.debugLineNum = 2752539;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2228251;
+ //BA.debugLineNum = 2228251;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -532,30 +532,30 @@ if (true) break;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="campeonatosequipos";
-RDebugUtils.currentLine=2883584;
- //BA.debugLineNum = 2883584;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=2883586;
- //BA.debugLineNum = 2883586;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2359296;
+ //BA.debugLineNum = 2359296;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=2359298;
+ //BA.debugLineNum = 2359298;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="campeonatosequipos";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=2818048;
- //BA.debugLineNum = 2818048;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=2818050;
- //BA.debugLineNum = 2818050;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2293760;
+ //BA.debugLineNum = 2293760;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=2293762;
+ //BA.debugLineNum = 2293762;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnagregar_click() throws Exception{
 RDebugUtils.currentModule="campeonatosequipos";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnagregar_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnagregar_click", null));}
-RDebugUtils.currentLine=2949120;
- //BA.debugLineNum = 2949120;BA.debugLine="Private Sub btnAgregar_Click";
-RDebugUtils.currentLine=2949122;
- //BA.debugLineNum = 2949122;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2424832;
+ //BA.debugLineNum = 2424832;BA.debugLine="Private Sub btnAgregar_Click";
+RDebugUtils.currentLine=2424834;
+ //BA.debugLineNum = 2424834;BA.debugLine="End Sub";
 return "";
 }
 }

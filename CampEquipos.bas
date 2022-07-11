@@ -20,7 +20,7 @@ End Sub
 Public Sub Read_One( Id As String) As ResumableSub
 
 	api.Download( apiUrl & "/" & Id)
-	api.GetRequest.SetHeader("access-token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjU3MzgxNzM3LCJleHAiOjE2NTc1NTQ1Mzd9.-3a8wuthLwDFZhOD7kZQn8kxX8u84GBDTvfwKSYnu3w")
+	api.GetRequest.SetHeader("access-token", Main.token)
 	'' respuesta de la API
 	Wait For (api) JobDone( response As HttpJob)
 	Dim datos As Campeonato
@@ -37,7 +37,7 @@ Public Sub Read_All_Equipos_By_Campeonato(Id As String) As ResumableSub
 	
 	'' invocar el metodo GET de la API
 	api.Download( apiUrlEquipos & "/" & Id)
-	api.GetRequest.SetHeader("access-token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjU3MzgxNzM3LCJleHAiOjE2NTc1NTQ1Mzd9.-3a8wuthLwDFZhOD7kZQn8kxX8u84GBDTvfwKSYnu3w")
+	api.GetRequest.SetHeader("access-token", Main.token)
 	'' esperar la respuesta de la API
 	Wait For (api) JobDone( response As HttpJob)
 	

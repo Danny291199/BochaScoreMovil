@@ -75,7 +75,7 @@ Debug.ShouldStop(524288);
 _jsontxt = _jsongen.runMethod(true,"ToString");Debug.locals.put("jsonTxt", _jsontxt);Debug.locals.put("jsonTxt", _jsontxt);
  BA.debugLineNum = 21;BA.debugLine="Log(jsonTxt)";
 Debug.ShouldStop(1048576);
-parent.__c.runVoidMethod ("LogImpl","42359306",_jsontxt,0);
+parent.__c.runVoidMethod ("LogImpl","61835018",_jsontxt,0);
  BA.debugLineNum = 23;BA.debugLine="api.PostString( apiUrl, jsonTxt)";
 Debug.ShouldStop(4194304);
 __ref.getField(false,"_api" /*RemoteObject*/ ).runClassMethod (b4a.example.httpjob.class, "_poststring" /*RemoteObject*/ ,(Object)(__ref.getField(true,"_apiurl" /*RemoteObject*/ )),(Object)(_jsontxt));
@@ -113,7 +113,7 @@ case 3:
 this.state = 6;
  BA.debugLineNum = 31;BA.debugLine="Log(response.GetString)";
 Debug.ShouldStop(1073741824);
-parent.__c.runVoidMethod ("LogImpl","42359316",_response.runClassMethod (b4a.example.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
+parent.__c.runVoidMethod ("LogImpl","61835028",_response.runClassMethod (b4a.example.httpjob.class, "_getstring" /*RemoteObject*/ ),0);
  BA.debugLineNum = 32;BA.debugLine="datos = DeserializarUno( response.GetString )";
 Debug.ShouldStop(-2147483648);
 _datos = __ref.runClassMethod (b4a.example.inicios.class, "_deserializaruno" /*RemoteObject*/ ,(Object)(_response.runClassMethod (b4a.example.httpjob.class, "_getstring" /*RemoteObject*/ )));Debug.locals.put("datos", _datos);
@@ -172,7 +172,7 @@ _datos = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map")
 _datos = _jsonparser.runMethod(false,"NextObject");Debug.locals.put("datos", _datos);Debug.locals.put("datos", _datos);
  BA.debugLineNum = 69;BA.debugLine="Log(datos)";
 Debug.ShouldStop(16);
-inicios.__c.runVoidMethod ("LogImpl","42555909",BA.ObjectToString(_datos),0);
+inicios.__c.runVoidMethod ("LogImpl","62031621",BA.ObjectToString(_datos),0);
  BA.debugLineNum = 70;BA.debugLine="Return MapToInicio(datos)";
 Debug.ShouldStop(32);
 if (true) return __ref.runClassMethod (b4a.example.inicios.class, "_maptoinicio" /*RemoteObject*/ ,(Object)(_datos));
