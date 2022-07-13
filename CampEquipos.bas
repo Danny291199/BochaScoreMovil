@@ -7,6 +7,7 @@ Version=11.5
 Sub Class_Globals
 	Private apiUrl 	As String = "https://brochascore.herokuapp.com/campeonatos"
 	Private apiUrlEquipos As String = "https://brochascore.herokuapp.com/equiposCampeonato"
+	Private apiUrlEquipos2 As String = "https://brochascore.herokuapp.com/equipos"
 	Private api		As HttpJob
 	
 End Sub
@@ -15,6 +16,39 @@ End Sub
 Public Sub Initialize
 	api.Initialize("", Me)
 	
+End Sub
+
+Public Sub CreateEquipo(Nombre As String,Imagen As String,Fecha_Creacion As String) As ResumableSub
+	
+	'' geberar el JSON
+	Dim jsonGen As JSONGenerator
+	jsonGen.Initialize( CreateMap ( _
+		"nombre" : Nombre, _
+		"imagen" : Imagen, _
+		"campeonatoId" : Main.idCampeonato, _
+		"fecha_creacion" : Fecha_Creacion, _
+		"delete_status" : 0 _
+	))
+	
+	Dim jsonTxt As String = jsonGen.ToString
+	Log(jsonTxt)
+	Log(jsonTxt)
+	'' invocar el metodo POST de la API
+	api.PostString( apiUrlEquipos2, jsonTxt)
+	api.GetRequest.SetContentType("application/json")
+	api.GetRequest.SetHeader("access-token",Main.token)
+	
+	'' esperar por la respuesta de la API
+	Wait For (api) JobDone( response As HttpJob )
+	
+	Dim datos As Equipo
+	If response.Success Then
+		datos = DeserializarUnoEquipo( response.GetString )
+	Else
+		datos.Initialize
+	End If
+	
+	Return datos
 End Sub
 
 Public Sub Read_One( Id As String) As ResumableSub
@@ -63,11 +97,15 @@ End Sub
 
 Private Sub MapToEquipos( datos As Map ) As Equipo
 	Dim eq As Equipo
-	eq.Initialize
 	
-	eq.Id                   = datos.Get("id")
+	eq.Initialize
+
+	eq.Id                  = datos.Get("id")
 	eq.Nombre              = datos.Get("nombre")
 	eq.Imagen              = datos.Get("imagen")
+	eq.Fecha_Creacion      = datos.Get("fecha_creacion")
+	
+	
 	Return eq
 End Sub
 
@@ -78,6 +116,15 @@ Private Sub DeserializarUno( jsonTxt As String) As Campeonato
 	Dim datos As Map = jsonParser.NextObject
 	Log(datos)
 	Return MapToCampeonato(datos)
+End Sub
+
+Private Sub DeserializarUnoEquipo( jsonTxt As String) As Equipo
+	Dim jsonParser As JSONParser
+	jsonParser.Initialize(jsonTxt)
+	
+	Dim datos As Map = jsonParser.NextObject
+	Log(datos)
+	Return MapToEquipos(datos)
 End Sub
 
 Private Sub DeserializarLista( jsonTxt As String) As List

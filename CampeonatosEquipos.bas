@@ -57,7 +57,23 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-
+	lstEquipos.Clear
+	Dim Job As HttpJob
+	Job.Initialize("Job",Me)
+	Wait For (camp_equi.Read_One(Main.idCampeonato)) Complete ( respuesta As Campeonato)
+	Job.Download(respuesta.Imagen)
+	txtNomCamp.Text = respuesta.Nombre
+	Wait For (Job) JobDone (Job As HttpJob)
+	If Job.Success = True Then
+		ImgCamp.Bitmap = Job.GetBitmap
+	End If
+	
+	Wait For (camp_equi.Read_All_Equipos_By_Campeonato(Main.idCampeonato)) Complete ( respuestalista As List)
+	If respuestalista.Size > 0 Then
+		For Each equip As Equipo In respuestalista
+			lstEquipos.AddSingleLine(equip.Nombre)
+		Next
+	End If
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -66,5 +82,5 @@ End Sub
 
 
 Private Sub btnAgregar_Click
-	
+	StartActivity(PantallaRegistro)
 End Sub
