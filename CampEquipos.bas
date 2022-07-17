@@ -51,6 +51,35 @@ Public Sub CreateEquipo(Nombre As String,Imagen As String,Fecha_Creacion As Stri
 	Return datos
 End Sub
 
+public Sub Update( Id As Int,Nombre As String,Imagen As String,Fecha_Creacion As String) As ResumableSub
+	'' generar el json
+	Dim jsonGen As JSONGenerator
+	jsonGen.Initialize( CreateMap ( _
+		"id" : Id, _
+		"nombre" : Nombre, _
+		"imagen" : Imagen, _
+		"fecha_creacion" : Fecha_Creacion, _
+		"delete_status" : 0 _
+	))
+	
+	Dim jsonTxt As String = jsonGen.ToString
+	
+	'' invocar metodo PUT de la API
+	api.PutString( apiUrlEquipos2, jsonTxt)
+	api.GetRequest.SetContentType("application/json")
+	api.GetRequest.SetContentType("application/json")
+	api.GetRequest.SetHeader("access-token",Main.token)
+	
+	'' respuesta desde la API
+	Wait For (api) JobDone( response As HttpJob)
+	If response.Success Then
+		Return 0
+	Else
+		Return response.Response.StatusCode
+	End If
+End Sub
+
+
 Public Sub Read_One( Id As String) As ResumableSub
 
 	api.Download( apiUrl & "/" & Id)
@@ -60,6 +89,22 @@ Public Sub Read_One( Id As String) As ResumableSub
 	Dim datos As Campeonato
 	If response.Success Then
 		datos = DeserializarUno( response.GetString )
+	Else
+		datos.Initialize
+	End If
+	
+	Return datos
+End Sub
+
+Public Sub Read_One_Equipos( Id As String) As ResumableSub
+
+	api.Download( apiUrlEquipos2 & "/" & Id)
+	api.GetRequest.SetHeader("access-token", Main.token)
+	'' respuesta de la API
+	Wait For (api) JobDone( response As HttpJob)
+	Dim datos As Equipo
+	If response.Success Then
+		datos = DeserializarUnoEquipo( response.GetString )
 	Else
 		datos.Initialize
 	End If

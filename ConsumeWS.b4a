@@ -1,14 +1,18 @@
 ﻿Build1=Default,b4a.example
 File1=1LoginBochaScore.bal
+File10=PantallaActualizar.bal
+File11=PantallaRegistro.bal
 File2=af2d823b62c4d18627270c7e2bb200ba.jpg
 File3=Agregar.png
 File4=Agregar-removebg-preview.png
 File5=index.html
-File6=Layout.bal
-File7=listaEquiposbyCampeonatos.bal
-File8=logo.png
-File9=PantallaRegistro.bal
+File6=item.bal
+File7=Layout.bal
+File8=listaEquiposbyCampeonatos.bal
+File9=logo.png
 FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
@@ -25,8 +29,9 @@ Library4=xui
 Library5=xcustomlistview
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Campeonato
-Module10=PantallaRegistro
-Module11=Starter
+Module10=PantallaActualizar
+Module11=PantallaRegistro
+Module12=Starter
 Module2=Campeonatos
 Module3=CampeonatosEquipos
 Module4=CampEquipos
@@ -35,9 +40,9 @@ Module6=inicio
 Module7=inicios
 Module8=Login
 Module9=loginModel
-NumberOfFiles=9
+NumberOfFiles=11
 NumberOfLibraries=5
-NumberOfModules=11
+NumberOfModules=12
 Version=11.5
 @EndOfDesignText@
 #Region  Activity Attributes 

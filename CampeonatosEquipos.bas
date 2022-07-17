@@ -14,6 +14,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 	Private xui As XUI
 	Private camp_equi As CampEquipos
+	Dim equipId As Int
 End Sub
 
 Sub Globals
@@ -23,8 +24,12 @@ Sub Globals
 	
 
 	Private ImgCamp As ImageView
-	Private lstEquipos As ListView
 	Private btnAgregar As Button
+	Private xclv As CustomListView
+	Private txtNomEquipos As Label
+	Private imgEquipo As ImageView
+	Private listEquipos As List
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -34,7 +39,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("listaEquiposbyCampeonatos")
 	Dim Job As HttpJob
 	Job.Initialize("Job",Me)
-	lstEquipos.SingleLineLayout.Label.TextColor=Colors.Black
+	listEquipos.Initialize
 	'btnAgregar.Color = Colors.RGB(10,10,10)
 	
 	camp_equi.Initialize
@@ -49,17 +54,30 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	Wait For (camp_equi.Read_All_Equipos_By_Campeonato(Main.idCampeonato)) Complete ( respuestalista As List)
 	If respuestalista.Size > 0 Then
+		Dim xui As XUI
 		For Each equip As Equipo In respuestalista
-			lstEquipos.AddSingleLine(equip.Nombre)
+			listEquipos.Add(equip)
+			Dim p As B4XView = xui.CreatePanel("")
+			p.SetLayoutAnimated(100,0,0,100%x,40dip)
+			p.LoadLayout("item")
+			txtNomEquipos.Text=equip.Nombre
+			Job.Download(equip.Imagen)
+			Wait For (Job) JobDone (Job As HttpJob)
+			If Job.Success = True Then
+				imgEquipo.Bitmap = Job.GetBitmap
+			End If
+			xclv.Add(p,"")
 		Next
 	End If
 	
 End Sub
 
 Sub Activity_Resume
-	lstEquipos.Clear
+    xclv.Clear
 	Dim Job As HttpJob
 	Job.Initialize("Job",Me)
+	listEquipos.Initialize
+	
 	Wait For (camp_equi.Read_One(Main.idCampeonato)) Complete ( respuesta As Campeonato)
 	Job.Download(respuesta.Imagen)
 	txtNomCamp.Text = respuesta.Nombre
@@ -71,7 +89,17 @@ Sub Activity_Resume
 	Wait For (camp_equi.Read_All_Equipos_By_Campeonato(Main.idCampeonato)) Complete ( respuestalista As List)
 	If respuestalista.Size > 0 Then
 		For Each equip As Equipo In respuestalista
-			lstEquipos.AddSingleLine(equip.Nombre)
+			listEquipos.Add(equip)
+			Dim p As B4XView = xui.CreatePanel("")
+			p.SetLayoutAnimated(100,0,0,100%x,100dip)
+			p.LoadLayout("item")
+			txtNomEquipos.Text=equip.Nombre
+			Job.Download(equip.Imagen)
+			Wait For (Job) JobDone (Job As HttpJob)
+			If Job.Success = True Then
+				imgEquipo.Bitmap = Job.GetBitmap
+			End If
+			xclv.Add(p,"")
 		Next
 	End If
 End Sub
@@ -83,4 +111,18 @@ End Sub
 
 Private Sub btnAgregar_Click
 	StartActivity(PantallaRegistro)
+End Sub
+
+
+
+Private Sub btnActualizar_Click
+	
+End Sub
+
+Private Sub xclv_ItemClick (Index As Int, Value As Object)
+	
+	Dim equip As Equipo = listEquipos.Get(Index)
+	Log(equip.Id)
+	equipId= equip.Id
+	StartActivity(PantallaActualizar)
 End Sub
