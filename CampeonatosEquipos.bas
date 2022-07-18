@@ -6,7 +6,7 @@ Version=11.5
 @EndOfDesignText@
 #Region  Activity Attributes 
 	#FullScreen: False
-	#IncludeTitle: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
@@ -56,7 +56,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	If respuestalista.Size > 0 Then
 		Dim xui As XUI
 		For Each equip As Equipo In respuestalista
-			listEquipos.Add(equip)
 			Dim p As B4XView = xui.CreatePanel("")
 			p.SetLayoutAnimated(100,0,0,100%x,40dip)
 			p.LoadLayout("item")
@@ -114,10 +113,6 @@ Private Sub btnAgregar_Click
 End Sub
 
 
-
-Private Sub btnActualizar_Click
-	
-End Sub
 
 Private Sub xclv_ItemClick (Index As Int, Value As Object)
 	

@@ -1,18 +1,34 @@
 ﻿Build1=Default,b4a.example
-File1=1LoginBochaScore.bal
-File10=PantallaActualizar.bal
-File11=PantallaRegistro.bal
-File2=af2d823b62c4d18627270c7e2bb200ba.jpg
-File3=Agregar.png
-File4=Agregar-removebg-preview.png
-File5=index.html
-File6=item.bal
-File7=Layout.bal
-File8=listaEquiposbyCampeonatos.bal
-File9=logo.png
+File1=1.bal
+File10=item2.bal
+File11=Layout.bal
+File12=listaEquiposbyCampeonatos.bal
+File13=logo.png
+File14=muestra-y-símbolo-del-vector-icono-jugador-de-fútbol-aislados-en-la-parte-posterior-blanca-133734035-removebg-preview.png
+File15=PantallaActualizar.bal
+File16=PantallaListaJugadores.bal
+File17=PantallaRegistrarJugador.bal
+File18=PantallaRegistro.bal
+File19=verJugadores-removebg-preview.png
+File2=1LoginBochaScore.bal
+File3=af2d823b62c4d18627270c7e2bb200ba.jpg
+File4=Agregar.png
+File5=Agregar-removebg-preview.png
+File6=datepicker.bal
+File7=eliminarEquipos-removebg-preview.png
+File8=index.html
+File9=item.bal
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
@@ -25,29 +41,34 @@ Group=Default Group
 Library1=core
 Library2=json
 Library3=okhttputils2
-Library4=xui
-Library5=xcustomlistview
+Library4=xcustomlistview
+Library5=xui
+Library6=dateutils
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
-Module1=Campeonato
-Module10=PantallaActualizar
-Module11=PantallaRegistro
-Module12=Starter
-Module2=Campeonatos
-Module3=CampeonatosEquipos
-Module4=CampEquipos
-Module5=Equipo
-Module6=inicio
-Module7=inicios
-Module8=Login
-Module9=loginModel
-NumberOfFiles=11
-NumberOfLibraries=5
-NumberOfModules=12
+Module1=AnotherDatePicker
+Module10=Jugadores
+Module11=Login
+Module12=loginModel
+Module13=PantallaActualizar
+Module14=PantallaListaJugadores
+Module15=PantallaRegistro
+Module16=Starter
+Module2=Campeonato
+Module3=Campeonatos
+Module4=CampeonatosEquipos
+Module5=CampEquipos
+Module6=Equipo
+Module7=inicio
+Module8=inicios
+Module9=Jugador
+NumberOfFiles=19
+NumberOfLibraries=6
+NumberOfModules=16
 Version=11.5
 @EndOfDesignText@
 #Region  Activity Attributes 
 	#FullScreen: False
-	#IncludeTitle: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals

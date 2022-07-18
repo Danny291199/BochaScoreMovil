@@ -51,7 +51,7 @@ Public Sub CreateEquipo(Nombre As String,Imagen As String,Fecha_Creacion As Stri
 	Return datos
 End Sub
 
-public Sub Update( Id As Int,Nombre As String,Imagen As String,Fecha_Creacion As String) As ResumableSub
+public Sub Update(Id As Int, Nombre As String,Imagen As String,Fecha_Creacion As String) As ResumableSub
 	'' generar el json
 	Dim jsonGen As JSONGenerator
 	jsonGen.Initialize( CreateMap ( _
@@ -67,7 +67,6 @@ public Sub Update( Id As Int,Nombre As String,Imagen As String,Fecha_Creacion As
 	'' invocar metodo PUT de la API
 	api.PutString( apiUrlEquipos2, jsonTxt)
 	api.GetRequest.SetContentType("application/json")
-	api.GetRequest.SetContentType("application/json")
 	api.GetRequest.SetHeader("access-token",Main.token)
 	
 	'' respuesta desde la API
@@ -76,6 +75,20 @@ public Sub Update( Id As Int,Nombre As String,Imagen As String,Fecha_Creacion As
 		Return 0
 	Else
 		Return response.Response.StatusCode
+	End If
+End Sub
+
+Public Sub Delete(codigo As String) As ResumableSub
+	'' invocar el metodo DELETE de la API
+	Log(codigo)
+	api.Delete(apiUrlEquipos2 & "/" & codigo)
+	api.GetRequest.SetHeader("access-token",Main.token)
+	'' respuesta de la API
+	Wait For (api) JobDone( respuesta As HttpJob)
+	If respuesta.Success Then
+		Return 0
+	Else
+		Return respuesta.Response.StatusCode
 	End If
 End Sub
 
