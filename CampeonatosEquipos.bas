@@ -37,6 +37,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Activity.LoadLayout("Layout1")
 	
 	Activity.LoadLayout("listaEquiposbyCampeonatos")
+	Activity.Title = "Equipos"
 	Dim Job As HttpJob
 	Job.Initialize("Job",Me)
 	listEquipos.Initialize
@@ -52,6 +53,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 	
 	
+	
+	
 	Wait For (camp_equi.Read_All_Equipos_By_Campeonato(Main.idCampeonato)) Complete ( respuestalista As List)
 	If respuestalista.Size > 0 Then
 		Dim xui As XUI
@@ -61,11 +64,16 @@ Sub Activity_Create(FirstTime As Boolean)
 			p.SetLayoutAnimated(100,0,0,100%x,40dip)
 			p.LoadLayout("item")
 			txtNomEquipos.Text=equip.Nombre
-			Job.Download(equip.Imagen)
-			Wait For (Job) JobDone (Job As HttpJob)
-			If Job.Success = True Then
-				imgEquipo.Bitmap = Job.GetBitmap
+			If equip.Imagen <> "" Then
+				Job.Download(equip.Imagen)
+				Wait For (Job) JobDone (Job As HttpJob)
+				If Job.Success = True Then
+					imgEquipo.Bitmap = Job.GetBitmap
+				End If
+			Else
+				imgEquipo.Bitmap = LoadBitmap(File.DirAssets,"equipo_default.png")
 			End If
+		
 			xclv.Add(p,"")
 		Next
 	End If
@@ -94,10 +102,14 @@ Sub Activity_Resume
 			p.SetLayoutAnimated(100,0,0,100%x,100dip)
 			p.LoadLayout("item")
 			txtNomEquipos.Text=equip.Nombre
-			Job.Download(equip.Imagen)
-			Wait For (Job) JobDone (Job As HttpJob)
-			If Job.Success = True Then
-				imgEquipo.Bitmap = Job.GetBitmap
+			If equip.Imagen <> "" Then
+				Job.Download(equip.Imagen)
+				Wait For (Job) JobDone (Job As HttpJob)
+				If Job.Success = True Then
+					imgEquipo.Bitmap = Job.GetBitmap
+				End If
+			Else
+				imgEquipo.Bitmap = LoadBitmap(File.DirAssets,"equipo_default.png")
 			End If
 			xclv.Add(p,"")
 		Next
@@ -108,12 +120,9 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-
 Private Sub btnAgregar_Click
 	StartActivity(PantallaRegistro)
 End Sub
-
-
 
 Private Sub btnActualizar_Click
 	

@@ -42,7 +42,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		
 		txtNombreActualizar.Text = respuesta.Nombre
 		txtImagenActualizar.Text = respuesta.Imagen
-		txtFechaCreacionActualizar.Text = respuesta.Fecha_Creacion.
+		txtFechaCreacionActualizar.Text = respuesta.Fecha_Creacion
 		
 	Else
 		xui.MsgboxAsync("REGISTRO NO ENCONTRADO !!", "ERROR")

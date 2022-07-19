@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1094890413439",
+    "project_id": "bochascore",
+    "storage_bucket": "bochascore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094890413439:android:105dbb2cbe6375e93b8e4a",
+        "android_client_info": {
+          "package_name": "com.bocha.bochascore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094890413439-m1bdmuefli7lkl5oagbhlld3pkmg6grj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS2dIwMCwcyUkOE3DhQAjAbI0KCbkfgdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094890413439-m1bdmuefli7lkl5oagbhlld3pkmg6grj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

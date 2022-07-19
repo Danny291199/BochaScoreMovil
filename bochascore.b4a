@@ -1,0 +1,114 @@
+﻿Build1=Default,com.bocha.bochascore
+File1=1LoginBochaScore.bal
+File10=logo.png
+File11=PantallaActualizar.bal
+File12=PantallaRegistro.bal
+File2=af2d823b62c4d18627270c7e2bb200ba.jpg
+File3=Agregar.png
+File4=Agregar-removebg-preview.png
+File5=equipo_default.png
+File6=index.html
+File7=item.bal
+File8=Layout.bal
+File9=listaEquiposbyCampeonatos.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=contentresolver
+Library10=javaobject
+Library2=core
+Library3=firebasestorage
+Library4=json
+Library5=okhttputils2
+Library6=phone
+Library7=runtimepermissions
+Library8=xcustomlistview
+Library9=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~~\n~'************ Google Play Services Base ************~\n~AddApplicationText(~\n~   <activity android:name="com.google.android.gms.common.api.GoogleApiActivity"~\n~  android:theme="@android:style/Theme.Translucent.NoTitleBar"~\n~  android:exported="false"/>~\n~    <meta-data~\n~  android:name="com.google.android.gms.version"~\n~  android:value="@integer/google_play_services_version" />~\n~)~\n~'************ Google Play Services Base (end) ************~\n~'************ Firebase Base ************~\n~CreateResourceFromFile("google-services", "google-services.json")~\n~AddPermission(android.permission.ACCESS_NETWORK_STATE)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.WAKE_LOCK)~\n~AddPermission(com.google.android.c2dm.permission.RECEIVE)~\n~AddPermission(${applicationId}.permission.C2D_MESSAGE)~\n~AddManifestText( <permission android:name="${applicationId}.permission.C2D_MESSAGE"~\n~  android:protectionLevel="signature" />)~\n~AddApplicationText(~\n~<receiver~\n~  android:name="com.google.android.gms.measurement.AppMeasurementReceiver"~\n~  android:enabled="true">~\n~  <intent-filter>~\n~  <action android:name="com.google.android.gms.measurement.UPLOAD"/>~\n~  </intent-filter>~\n~  </receiver>~\n~~\n~  <service~\n~  android:name="com.google.android.gms.measurement.AppMeasurementService"~\n~  android:enabled="true"~\n~  android:exported="false"/>~\n~   <provider~\n~  android:authorities="${applicationId}.firebaseinitprovider"~\n~  android:name="com.google.firebase.provider.FirebaseInitProvider"~\n~  android:exported="false"~\n~  android:initOrder="100" />~\n~    <receiver~\n~  android:name="com.google.android.gms.measurement.AppMeasurementReceiver"~\n~  android:enabled="true">~\n~  <intent-filter>~\n~  <action android:name="com.google.android.gms.measurement.UPLOAD"/>~\n~  </intent-filter>~\n~  </receiver>~\n~~\n~  <service~\n~  android:name="com.google.android.gms.measurement.AppMeasurementService"~\n~  android:enabled="true"~\n~  android:exported="false"/>~\n~   <receiver~\n~  android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"~\n~  android:exported="true"~\n~  android:permission="com.google.android.c2dm.permission.SEND" >~\n~  <intent-filter>~\n~  <action android:name="com.google.android.c2dm.intent.RECEIVE" />~\n~  <action android:name="com.google.android.c2dm.intent.REGISTRATION" />~\n~  <category android:name="${applicationId}" />~\n~  </intent-filter>~\n~  </receiver>~\n~    <receiver~\n~  android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"~\n~  android:exported="false" />~\n~~\n~~\n~  <service~\n~  android:name="com.google.firebase.iid.FirebaseInstanceIdService"~\n~  android:exported="true">~\n~  <intent-filter android:priority="-500">~\n~  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />~\n~  </intent-filter>~\n~  </service>~\n~)~\n~'************ Firebase Base (end) ************~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.GooglePlayBase)~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.Firebase)~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.FirebaseAnalytics)~\n~CreateResourceFromFile(Macro, FirebaseAuth.FirebaseAuth)~\n~~\n~~\n~
+Module1=Campeonato
+Module10=PantallaActualizar
+Module11=PantallaRegistro
+Module12=Starter
+Module2=Campeonatos
+Module3=CampeonatosEquipos
+Module4=CampEquipos
+Module5=Equipo
+Module6=inicio
+Module7=inicios
+Module8=Login
+Module9=loginModel
+NumberOfFiles=12
+NumberOfLibraries=10
+NumberOfModules=12
+Version=11.5
+@EndOfDesignText@
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+	Private logi As loginModel
+	Dim idCampeonato As String
+	Dim token As String
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Private txtUsuario As EditText
+	Private txtContrasenia As EditText
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	'Activity.LoadLayout("Layout1")
+	Activity.LoadLayout("1LoginBochaScore")
+	
+	logi.Initialize
+	txtUsuario.SingleLine=False
+	txtContrasenia.SingleLine=False
+    Dim cd As ColorDrawable
+    cd.Initialize2(Colors.Transparent, 10dip,1dip,Colors.White)
+	txtUsuario.Background=cd
+	txtContrasenia.Background=cd
+	txtContrasenia.PasswordMode = True
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub btnEntrar_Click
+	
+	
+	Wait For (logi.Login_Post(txtUsuario.Text,txtContrasenia.Text)) Complete( resultado As Login )
+	Log(resultado.CampeonatoId <> "")
+	If resultado.CampeonatoId <> ""  Then
+		idCampeonato = resultado.CampeonatoId
+		token = resultado.Token
+		StartActivity(CampeonatosEquipos)
+		Activity.Finish
+	Else
+		xui.MsgboxAsync("Error al ingresar", "ERROR")
+	End If
+	
+	
+End Sub
