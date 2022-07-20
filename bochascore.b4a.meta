@@ -37,6 +37,6 @@ ModuleClosedNodes6=
 ModuleClosedNodes7=
 ModuleClosedNodes8=
 ModuleClosedNodes9=
-NavigationStack=PantallaActualizar,GetDownloadUrl,155,0,PantallaActualizar,CreateFirebaseStorage,161,0,PantallaRegistro,Globals,22,0,PantallaRegistro,btnEntrar_Click,56,0,PantallaActualizar,Activity_Pause,78,0,PantallaActualizar,Globals,25,6,PantallaActualizar,Activity_Create,49,1,PantallaRegistro,CC_Result,90,0,PantallaActualizar,CC_Result,135,0,PantallaActualizar,btnActualizar_Click,82,4
+NavigationStack=PantallaRegistro,btnEntrar_Click,56,0,PantallaActualizar,Activity_Pause,78,0,PantallaActualizar,Globals,25,6,PantallaActualizar,Activity_Create,49,1,PantallaRegistro,CC_Result,90,0,PantallaActualizar,CC_Result,135,0,Diseñador Visual,PantallaActualizar.bal,-100,1,PantallaActualizar,btnActualizar_Click,82,4,PantallaActualizar,btnUploadImage_Click,126,0,PantallaActualizar,btnVerJugadores_Click,121,0
 SelectedBuild=0
 VisibleModules=11,3,10

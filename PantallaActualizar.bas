@@ -125,7 +125,7 @@ Private Sub btnEliminar_Click
 End Sub
 
 Private Sub btnVerJugadores_Click
-'	StartActivity(PantallaListaJugadores)
+	StartActivity(PantallaListaJugadores)
 End Sub
 
 
