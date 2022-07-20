@@ -39,10 +39,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("PantallaRegistro")
 	equi.Initialize
 	CC.Initialize("CC")
-
-
-	
-	
 	
 	txtNombre.SingleLine=False
 	txtFechaCreacion.SingleLine=False
